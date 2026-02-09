@@ -1,65 +1,70 @@
 ---
 const divisions = [
   {
-    name: "NEXUS SERIES",
-    subtitle: "Replicant Development",
-    description: "Our flagship program. The Nexus line represents the pinnacle of synthetic biological engineering. From the foundational Nexus-1 through the current Nexus-7 prototype, each generation has pushed the boundaries of cognitive architecture, emotional depth, and physical resilience. Nexus-6 units remain our most widely deployed model — superior strength, equal intelligence, 4-year operational lifespan.",
-    version: "NEXUS-6 // CURRENT PRODUCTION",
-    models: "N1 — N2 — N3 — N4 — N5 — N6 — N7 — N8"
+    letter: "N",
+    name: "NEXUS",
+    subtitle: "Cognitive Architecture Division",
+    status: "ACTIVE",
+    statusType: "active",
+    description: "Advanced neural networks and synthetic consciousness. The Nexus series represents the pinnacle of artificial cognitive development.",
+    link: "ACCESS PROGRAM"
   },
   {
-    name: "GENETIC DESIGN",
-    subtitle: "Molecular Engineering",
-    description: "The foundation of everything we build. Our genetic designers construct living tissue — muscle, bone, neural pathways — from base amino acids with atomic precision. Each replicant is grown, not assembled. Skin cells, organ systems, skeletal structure, all engineered to specification. The artistry of creation at the molecular level.",
-    version: "DIVISION-G // ACTIVE",
-    models: "COMBAT — LABOR — SPECIALIST — PLEASURE"
+    letter: "G",
+    name: "GENESIS",
+    subtitle: "Molecular Design Division",
+    status: "ACTIVE",
+    statusType: "active",
+    description: "Biological engineering at the cellular level. Custom organisms, synthetic tissue, and accelerated evolutionary pathways.",
+    link: "ACCESS PROGRAM"
   },
   {
-    name: "MEMORY IMPLANT",
-    subtitle: "Experiential Architecture",
-    description: "Our most sensitive division. The implantation of synthetic memories provides replicants with emotional cushioning — a past to anchor their present. Childhood recollections, family bonds, formative experiences. These memories are indistinguishable from organic human memories, providing a foundation for emotional stability and operational reliability.",
-    version: "DIVISION-M // CLASSIFIED",
-    models: "IMPLANT — BASELINE — CUSTOM"
-  },
-  {
-    name: "OFF-WORLD OPS",
-    subtitle: "Colonial Deployment",
-    description: "Coordination of replicant deployment across all Off-World colonies. Hazardous environment specialists for toxic atmospheres, high-radiation zones, and extreme gravitational conditions. Combat units for colonial defense. Labor units for infrastructure construction. The backbone of humanity's expansion beyond Earth.",
-    version: "OWO // ACTIVE",
-    models: "SIGMA — TAU — OUTER COLONIES"
+    letter: "P",
+    name: "PROMETHEUS",
+    subtitle: "Memory Systems Division",
+    status: "CLASSIFIED",
+    statusType: "classified",
+    description: "Implantation of synthetic memories and experiential architectures. [FURTHER DETAILS RESTRICTED]",
+    link: "ACCESS PROGRAM"
   }
 ];
 ---
 
-<section class="relative py-32 sm:py-40 px-6">
-  <div class="max-w-6xl mx-auto">
-    <div class="reveal text-center mb-20">
-      <p class="font-mono text-xs tracking-[0.4em] text-stone/50 mb-4">OPERATING DIVISIONS</p>
-      <h2 class="font-display text-4xl sm:text-5xl font-light text-ivory">Corporate Structure</h2>
+<section class="py-32 bg-obsidian">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="reveal mb-16">
+      <p class="font-mono text-xs tracking-[0.3em] text-amber status-active mb-4">DIVISIONS</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-light text-ivory">Our Programs</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {divisions.map((div, i) => (
-        <div class={`reveal reveal-delay-${(i % 3) + 1} border border-stone/10 bg-obsidian/50 p-8 relative`}>
-          <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-amber via-amber-bright to-amber"></div>
-
-          <div class="flex items-start justify-between mb-4">
-            <div>
-              <h3 class="font-display text-2xl font-light text-ivory mb-1">{div.name}</h3>
-              <p class="font-mono text-xs tracking-widest text-stone/50">{div.subtitle}</p>
+        <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-8`}>
+          <!-- Top row: icon + status -->
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 clip-corner border border-amber flex items-center justify-center">
+              <span class="text-amber font-mono font-bold text-lg">{div.letter}</span>
             </div>
-            <p class="font-mono text-[10px] tracking-[0.2em] text-amber/60">{div.version}</p>
+            <span class={`font-mono text-xs tracking-widest ${div.statusType === 'classified' ? 'status-classified text-red-400' : 'status-active text-amber'}`}>
+              {div.status}
+            </span>
           </div>
 
-          <p class="text-stone text-sm leading-relaxed mb-4">{div.description}</p>
+          <!-- Title -->
+          <h3 class="text-white uppercase font-bold text-xl mb-2">{div.name}</h3>
+          <p class="font-mono text-xs tracking-widest text-stone mb-4">{div.subtitle}</p>
 
-          <div class="pt-3 border-t border-stone/10">
-            <p class="font-mono text-[10px] tracking-[0.2em] text-stone/40">{div.models}</p>
-          </div>
+          <!-- Description -->
+          <p class="text-stone font-mono text-sm leading-relaxed mb-6">{div.description}</p>
+
+          <!-- Link -->
+          <a href="#" class="font-mono text-sm text-amber tracking-wider hover:text-amber-bright transition-colors">
+            {div.link} &rarr;
+          </a>
         </div>
       ))}
     </div>
   </div>
-
-  <div class="absolute bottom-0 left-0 right-0 grid-line"></div>
 </section>

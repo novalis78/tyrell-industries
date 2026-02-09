@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Tyrell Corporation — More Human Than Human",
-  description = "The Tyrell Corporation designs and manufactures genetically engineered organic androids known as replicants. From our twin pyramids in Los Angeles, we architect consciousness for the Off-World colonies. Founded by Dr. Eldon Tyrell."
+  title = "Tyrell Industries — More Human Than Human",
+  description = "Pioneering synthetic biological systems and cognitive architectures since 2019. Tyrell Industries designs life at the molecular level."
 } = Astro.props;
 
 const canonicalUrl = "https://tyrell.industries";
@@ -23,16 +23,15 @@ const canonicalUrl = "https://tyrell.industries";
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Tyrell Industries — More Human Than Human" />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Tyrell Industries" />
-    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tyrell Industries — More Human Than Human" />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
     <!-- Structured Data -->
@@ -43,15 +42,17 @@ const canonicalUrl = "https://tyrell.industries";
       "description": description,
       "url": canonicalUrl,
       "foundingDate": "2019",
-      "foundingLocation": "Los Angeles, California",
+      "foundingLocation": "Los Angeles",
       "slogan": "More human than human"
     })} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <title>{title}</title>
   </head>
