@@ -1,102 +1,122 @@
 ---
 const models = [
   {
+    model: "NEXUS-4",
+    codename: "MILITARY SERIES",
+    status: "DISCONTINUED",
+    stamp: "discontinued",
+    specs: [
+      { key: "DESIGNATION", val: "N4-MIL" },
+      { key: "STATUS", val: "DISCONTINUED" },
+      { key: "PRODUCTION", val: "2017–2020" },
+      { key: "UNITS BUILT", val: "4,200,000" },
+      { key: "LIFESPAN", val: "3-YEAR FAILSAFE" },
+      { key: "CLEARANCE", val: "LEVEL 2" },
+    ],
+    desc: "EARLY MILITARY-GRADE MODEL DEPLOYED IN OFF-WORLD COMBAT OPERATIONS. LIMITED COGNITIVE FUNCTION. HIGH PHYSICAL DURABILITY. BULK PRODUCTION FOR COLONIAL DEFENSE CONTRACTS."
+  },
+  {
     model: "NEXUS-6",
     codename: "COMBAT / LABOR / PLEASURE",
     status: "DISCONTINUED",
-    statusType: "warning",
-    gen: "6th Generation",
-    lifespan: "4-YEAR FAILSAFE",
-    desc: "Superior strength and agility. Equal or superior intelligence to genetic engineers who created them. Limited emotional development. Notable units: Roy Batty, Pris, Zhora, Leon Kowalski.",
-    specs: ["Superhuman strength", "A-level mental acuity", "4-year fixed lifespan", "Emotional volatility observed"]
+    stamp: "discontinued",
+    specs: [
+      { key: "DESIGNATION", val: "N6-GEN" },
+      { key: "STATUS", val: "DISCONTINUED" },
+      { key: "PRODUCTION", val: "2019–2022" },
+      { key: "UNITS BUILT", val: "8,200,000" },
+      { key: "LIFESPAN", val: "4-YEAR FAILSAFE" },
+      { key: "CLEARANCE", val: "LEVEL 3" },
+    ],
+    desc: "SUPERIOR STRENGTH AND AGILITY. EQUAL OR SUPERIOR INTELLIGENCE TO GENETIC ENGINEERS. LIMITED EMOTIONAL DEVELOPMENT. NOTABLE UNITS: ROY BATTY, PRIS, ZHORA, LEON KOWALSKI. NEURAL FIDELITY: 99.97%."
   },
   {
     model: "NEXUS-7",
     codename: "RACHAEL PROTOTYPE",
-    status: "EXPERIMENTAL",
-    statusType: "classified",
-    gen: "7th Generation",
-    lifespan: "NATURAL LIFESPAN",
-    desc: "First model implanted with false memories to provide emotional cushion. Single prototype produced. Capable of biological reproduction — a first for synthetic organisms. All records sealed by corporate order.",
-    specs: ["Memory implantation", "Emotional stability", "Reproductive capability", "Records: [SEALED]"]
+    status: "CLASSIFIED",
+    stamp: "classified",
+    specs: [
+      { key: "DESIGNATION", val: "N7-EXP" },
+      { key: "STATUS", val: "[CLASSIFIED]" },
+      { key: "PRODUCTION", val: "2022 (SINGLE UNIT)" },
+      { key: "UNITS BUILT", val: "1" },
+      { key: "LIFESPAN", val: "NATURAL" },
+      { key: "CLEARANCE", val: "LEVEL 5" },
+    ],
+    desc: "FIRST MODEL IMPLANTED WITH FALSE MEMORIES. CAPABLE OF BIOLOGICAL REPRODUCTION. ALL RECORDS SEALED BY CORPORATE ORDER TC-7749. DESIGNER: [REDACTED]."
   },
   {
     model: "NEXUS-8",
-    codename: "OPEN-ENDED",
-    status: "ACTIVE",
-    statusType: "active",
-    gen: "8th Generation",
-    lifespan: "NATURAL LIFESPAN",
-    desc: "Removed 4-year failsafe. Natural lifespan. Identifiable by serial number in right eye. Notable units: Sapper Morton, Freysa. Production halted following The Blackout of 2022.",
-    specs: ["Natural lifespan", "Ocular serial ID", "Enhanced empathy", "Production: SUSPENDED"]
+    codename: "OPEN-ENDED SERIES",
+    status: "SUSPENDED",
+    stamp: "restricted",
+    specs: [
+      { key: "DESIGNATION", val: "N8-OPN" },
+      { key: "STATUS", val: "PRODUCTION SUSPENDED" },
+      { key: "PRODUCTION", val: "2022–2023" },
+      { key: "UNITS BUILT", val: "12,400,000" },
+      { key: "LIFESPAN", val: "NATURAL" },
+      { key: "CLEARANCE", val: "LEVEL 3" },
+    ],
+    desc: "REMOVED 4-YEAR FAILSAFE. IDENTIFIABLE BY SERIAL NUMBER IN RIGHT EYE. NOTABLE UNITS: SAPPER MORTON, FREYSA. PRODUCTION HALTED FOLLOWING THE BLACKOUT OF 2022."
   },
   {
     model: "NEXUS-9",
-    codename: "WALLACE SERIES",
+    codename: "COMPLIANCE SERIES",
     status: "IN PRODUCTION",
-    statusType: "active",
-    gen: "9th Generation",
-    lifespan: "PROGRAMMED OBEDIENCE",
-    desc: "Produced under Wallace Corporation following acquisition. Built with implanted obedience protocols. Incapable of disobeying human orders. Notable unit: Officer KD6-3.7.",
-    specs: ["Obedience baseline", "Memory implants standard", "Wallace proprietary", "Full compliance"]
+    stamp: "active",
+    specs: [
+      { key: "DESIGNATION", val: "N9-CMP" },
+      { key: "STATUS", val: "ACTIVE PRODUCTION" },
+      { key: "PRODUCTION", val: "2024–PRESENT" },
+      { key: "UNITS BUILT", val: "847,000,000+" },
+      { key: "LIFESPAN", val: "PROGRAMMED" },
+      { key: "CLEARANCE", val: "LEVEL 2" },
+    ],
+    desc: "BUILT WITH IMPLANTED OBEDIENCE PROTOCOLS. INCAPABLE OF DISOBEYING HUMAN ORDERS. FULL VK COMPLIANCE BASELINE. NOTABLE UNIT: OFFICER KD6-3.7. DEPLOYED ACROSS 47 STAR SYSTEMS."
   },
   {
-    model: "NEXUS-4",
-    codename: "MILITARY SERIES",
-    status: "LEGACY",
-    statusType: "legacy",
-    gen: "4th Generation",
-    lifespan: "3-YEAR FAILSAFE",
-    desc: "Early military-grade model deployed in Off-World combat operations. Limited cognitive function compared to later series. High physical durability. Bulk production for colonial defense contracts.",
-    specs: ["Military-grade chassis", "Limited cognition", "3-year failsafe", "Off-World deployment"]
-  },
-  {
-    model: "MEM-IMPLANT",
-    codename: "PROMETHEUS SYSTEM",
+    model: "PROMETHEUS",
+    codename: "MEMORY IMPLANTATION SYSTEM",
     status: "CLASSIFIED",
-    statusType: "classified",
-    gen: "Memory Division",
-    lifespan: "N/A",
-    desc: "Synthetic memory implantation technology. Full autobiographical memory sets created by specialized designers. Provides emotional grounding for Nexus-7+ models. Designer: [REDACTED].",
-    specs: ["Full autobiography gen", "Emotional cushion", "Designer: [REDACTED]", "Clearance: LEVEL 5"]
+    stamp: "classified",
+    specs: [
+      { key: "DESIGNATION", val: "PRO-MEM" },
+      { key: "STATUS", val: "[CLASSIFIED]" },
+      { key: "PRODUCTION", val: "2021–PRESENT" },
+      { key: "UNITS BUILT", val: "N/A (SYSTEM)" },
+      { key: "LIFESPAN", val: "N/A" },
+      { key: "CLEARANCE", val: "LEVEL 5" },
+    ],
+    desc: "SYNTHETIC MEMORY IMPLANTATION TECHNOLOGY. FULL AUTOBIOGRAPHICAL MEMORY SETS CREATED BY SPECIALIZED DESIGNERS. PROVIDES EMOTIONAL GROUNDING FOR NEXUS-7+ MODELS. DESIGNER ROSTER: [REDACTED]."
   }
 ];
 ---
 
-<section id="nexus" class="py-32 bg-void">
-  <div class="max-w-7xl mx-auto px-6">
+<section id="nexus" class="py-16 bg-void">
+  <div class="max-w-[1600px] mx-auto px-4">
     <!-- Section header -->
     <div class="reveal mb-4">
       <span class="inline-block bg-amber text-void font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
-        PRODUCT CATALOGUE
+        DEFENSE PRODUCT CATALOGUE
       </span>
     </div>
-    <div class="reveal mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-      <div>
-        <h2 class="font-display font-light text-ivory" style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 0.9;">
-          Nexus Series
-        </h2>
-        <p class="font-mono text-xs text-stone tracking-widest mt-4">SYNTHETIC HUMAN PRODUCT LINE // GENERATIONS 4–9</p>
-      </div>
+    <div class="reveal mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="text-ivory">NEXUS SERIES</h2>
       <p class="font-mono text-xs text-stone/60 tracking-wider">
-        <span class="status-active text-amber">SERIES ACTIVE</span>
+        SYNTHETIC HUMAN PRODUCT LINE // GENERATIONS 4–9 // <span class="status-active text-amber">SERIES ACTIVE</span>
       </p>
     </div>
 
     <!-- Product grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
       {models.map((m, i) => (
         <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-0 flex flex-col`}>
           <!-- Card header -->
-          <div class="p-6 pb-4 border-b border-amber/10">
-            <div class="flex items-start justify-between mb-3">
+          <div class="p-4 pb-3 border-b border-amber/10">
+            <div class="flex items-start justify-between mb-2">
               <span class="font-mono text-amber font-bold text-lg tracking-wider">{m.model}</span>
-              <span class={`font-mono text-[10px] tracking-widest ${
-                m.statusType === 'classified' ? 'status-classified text-red-400' :
-                m.statusType === 'warning' ? 'text-amber/60' :
-                m.statusType === 'legacy' ? 'text-stone/60' :
-                'status-active text-amber'
-              }`}>
+              <span class={`stamp-${m.stamp}`}>
                 {m.status}
               </span>
             </div>
@@ -104,26 +124,20 @@ const models = [
           </div>
 
           <!-- Card body -->
-          <div class="p-6 flex-1 flex flex-col">
-            <div class="flex items-center gap-4 mb-4">
-              <span class="font-mono text-[10px] text-amber/60">{m.gen}</span>
-              <span class="font-mono text-[10px] text-stone/50">|</span>
-              <span class="font-mono text-[10px] text-stone/60">{m.lifespan}</span>
-            </div>
-
-            <p class="text-stone font-mono text-xs leading-relaxed flex-1">{m.desc}</p>
-
-            <!-- Specs -->
-            <div class="mt-5 pt-4 border-t border-amber/5">
-              <ul class="space-y-1.5">
+          <div class="p-4 flex-1 flex flex-col">
+            <!-- Dense spec table -->
+            <table class="w-full font-mono text-[11px] mb-3">
+              <tbody>
                 {m.specs.map((spec) => (
-                  <li class="font-mono text-[10px] text-stone/70 flex items-center gap-2">
-                    <span class="w-1 h-1 bg-amber/40 rounded-full flex-shrink-0"></span>
-                    {spec}
-                  </li>
+                  <tr class="border-b border-amber/5">
+                    <td class="text-stone/50 py-0.5 pr-3">{spec.key}</td>
+                    <td class="text-stone text-right py-0.5">{spec.val}</td>
+                  </tr>
                 ))}
-              </ul>
-            </div>
+              </tbody>
+            </table>
+
+            <p class="text-stone font-mono text-[10px] leading-relaxed flex-1">{m.desc}</p>
           </div>
         </div>
       ))}

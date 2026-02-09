@@ -3,66 +3,108 @@ const divisions = [
   {
     letter: "N",
     name: "NEXUS",
-    subtitle: "Cognitive Architecture Division",
+    subtitle: "COGNITIVE ARCHITECTURE DIVISION",
     status: "ACTIVE",
     statusType: "active",
-    description: "Advanced neural networks and synthetic consciousness. The Nexus series represents the pinnacle of artificial cognitive development.",
-    link: "ACCESS PROGRAM"
+    personnel: "412,000",
+    location: "TYRELL PYRAMID, SOL-3",
+    description: "ADVANCED NEURAL NETWORKS AND SYNTHETIC CONSCIOUSNESS DEVELOPMENT. PRIMARY PRODUCT LINE ACROSS ALL NEXUS GENERATIONS. 847M+ UNITS DEPLOYED INTERSTELLAR.",
   },
   {
     letter: "G",
     name: "GENESIS",
-    subtitle: "Molecular Design Division",
+    subtitle: "MOLECULAR DESIGN DIVISION",
     status: "ACTIVE",
     statusType: "active",
-    description: "Biological engineering at the cellular level. Custom organisms, synthetic tissue, and accelerated evolutionary pathways.",
-    link: "ACCESS PROGRAM"
+    personnel: "287,000",
+    location: "ORBITAL STATION GEN-7, SOL-4",
+    description: "BIOLOGICAL ENGINEERING AT THE CELLULAR LEVEL. CUSTOM ORGANISMS, SYNTHETIC TISSUE, AND ACCELERATED EVOLUTIONARY PATHWAYS FOR OFF-WORLD ENVIRONMENTS.",
   },
   {
     letter: "P",
     name: "PROMETHEUS",
-    subtitle: "Memory Systems Division",
+    subtitle: "MEMORY SYSTEMS DIVISION",
     status: "CLASSIFIED",
     statusType: "classified",
-    description: "Implantation of synthetic memories and experiential architectures. [FURTHER DETAILS RESTRICTED]",
-    link: "ACCESS PROGRAM"
-  }
+    personnel: "[REDACTED]",
+    location: "[CLASSIFIED]",
+    description: "IMPLANTATION OF SYNTHETIC MEMORIES AND EXPERIENTIAL ARCHITECTURES. CLEARANCE LEVEL 5 REQUIRED. [FURTHER DETAILS RESTRICTED PER TC-7749].",
+  },
+  {
+    letter: "O",
+    name: "OFF-WORLD OPS",
+    subtitle: "INTERSTELLAR OPERATIONS DIVISION",
+    status: "ACTIVE",
+    statusType: "active",
+    personnel: "891,000",
+    location: "47 STAR SYSTEMS",
+    description: "MANAGES ALL EXTRATERRESTRIAL OPERATIONS INCLUDING COLONY ESTABLISHMENT, RESOURCE EXTRACTION, AND NEXUS UNIT DEPLOYMENT ACROSS 12,847 WORLDS.",
+  },
+  {
+    letter: "D",
+    name: "DEFENSE",
+    subtitle: "MILITARY CONTRACTS DIVISION",
+    status: "ACTIVE",
+    statusType: "active",
+    personnel: "334,000",
+    location: "TANNHAUSER GATE STATION",
+    description: "MILITARY-GRADE NEXUS PRODUCTION AND COLONIAL DEFENSE SYSTEMS. SOLE CONTRACTOR FOR OFF-WORLD DEFENSE FORCE. ANNUAL CONTRACT VALUE: $890B.",
+  },
+  {
+    letter: "V",
+    name: "VOIGHT-KAMPFF",
+    subtitle: "COMPLIANCE & TESTING DIVISION",
+    status: "MANDATORY",
+    statusType: "active",
+    personnel: "176,000",
+    location: "ALL SECTORS",
+    description: "ADMINISTERS MANDATORY VK EMPATHY TESTING ACROSS ALL SECTORS. MAINTAINS REPLICANT REGISTRATION DATABASE. COORDINATES WITH BLADE RUNNER UNITS.",
+  },
 ];
 ---
 
-<section id="divisions" class="py-32 bg-obsidian">
-  <div class="max-w-6xl mx-auto px-6">
+<section id="divisions" class="py-16 bg-obsidian">
+  <div class="max-w-[1600px] mx-auto px-4">
     <!-- Section header -->
-    <div class="reveal mb-16">
-      <p class="font-mono text-xs tracking-[0.3em] text-amber status-active mb-4">DIVISIONS</p>
-      <h2 class="font-display text-4xl sm:text-5xl font-light text-ivory">Our Programs</h2>
+    <div class="reveal mb-4">
+      <span class="inline-block bg-amber text-void font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
+        CORPORATE STRUCTURE
+      </span>
+    </div>
+    <div class="reveal mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="text-ivory">DIVISIONS</h2>
+      <p class="font-mono text-xs text-stone/60 tracking-wider">
+        6 DIVISIONS // 2.1M PERSONNEL // 47 STAR SYSTEMS
+      </p>
     </div>
 
-    <!-- Cards grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Cards grid — tighter gap -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
       {divisions.map((div, i) => (
-        <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-8`}>
+        <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-5`}>
           <!-- Top row: icon + status -->
-          <div class="flex items-start justify-between mb-6">
-            <div class="w-14 h-14 clip-corner border border-amber flex items-center justify-center">
-              <span class="text-amber font-mono font-bold text-lg">{div.letter}</span>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 clip-corner border-2 border-amber flex items-center justify-center">
+              <span class="text-amber font-mono font-black text-lg">{div.letter}</span>
             </div>
-            <span class={`font-mono text-xs tracking-widest ${div.statusType === 'classified' ? 'status-classified text-red-400' : 'status-active text-amber'}`}>
+            <span class={`font-mono text-[10px] tracking-widest ${div.statusType === 'classified' ? 'stamp-classified' : 'text-amber font-bold'}`}>
               {div.status}
             </span>
           </div>
 
           <!-- Title -->
-          <h3 class="text-white uppercase font-bold text-xl mb-2">{div.name}</h3>
-          <p class="font-mono text-xs tracking-widest text-stone mb-4">{div.subtitle}</p>
+          <h3 class="text-ivory text-xl mb-1" style="font-size: 1.25rem;">{div.name}</h3>
+          <p class="font-mono text-[10px] tracking-widest text-stone/60 mb-3">{div.subtitle}</p>
+
+          <!-- Data line -->
+          <div class="flex gap-4 mb-3 font-mono text-[10px]">
+            <span class="text-stone/50">PERSONNEL: <span class="text-amber">{div.personnel}</span></span>
+            <span class="text-stone/30">|</span>
+            <span class="text-stone/50">{div.location}</span>
+          </div>
 
           <!-- Description -->
-          <p class="text-stone font-mono text-sm leading-relaxed mb-6">{div.description}</p>
-
-          <!-- Link -->
-          <a href="#" class="font-mono text-sm text-amber tracking-wider hover:text-amber-bright transition-colors">
-            {div.link} &rarr;
-          </a>
+          <p class="text-stone font-mono text-[11px] leading-relaxed">{div.description}</p>
         </div>
       ))}
     </div>

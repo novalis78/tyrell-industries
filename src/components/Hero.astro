@@ -3,96 +3,82 @@
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
   <!-- Industrial grid background -->
-  <div class="absolute inset-0 industrial-grid opacity-30 pointer-events-none"></div>
+  <div class="absolute inset-0 industrial-grid-dense opacity-40 pointer-events-none"></div>
 
-  <!-- SVG Tyrell Pyramid -->
+  <!-- SVG Tyrell Pyramid — LARGE, 40% opacity -->
   <div class="absolute inset-0 flex items-end justify-center pointer-events-none">
-    <svg viewBox="0 0 1200 600" class="w-full max-w-6xl opacity-[0.07]" preserveAspectRatio="xMidYMax meet">
+    <svg viewBox="0 0 1200 700" class="w-full max-w-[90vw] opacity-[0.35]" preserveAspectRatio="xMidYMax meet">
       <defs>
         <linearGradient id="pyramidGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#F4C563" stop-opacity="0.8" />
-          <stop offset="100%" stop-color="#D4A84B" stop-opacity="0.1" />
+          <stop offset="0%" stop-color="#F4C563" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#D4A84B" stop-opacity="0.15" />
         </linearGradient>
         <radialGradient id="pyramidGlow" cx="50%" cy="30%" r="50%">
-          <stop offset="0%" stop-color="#D4A84B" stop-opacity="0.3" />
+          <stop offset="0%" stop-color="#D4A84B" stop-opacity="0.4" />
           <stop offset="100%" stop-color="#D4A84B" stop-opacity="0" />
         </radialGradient>
       </defs>
-      <!-- Ambient glow behind pyramid -->
-      <ellipse cx="600" cy="350" rx="400" ry="250" fill="url(#pyramidGlow)" />
-      <!-- Main pyramid -->
-      <polygon points="600,60 1000,560 200,560" fill="none" stroke="url(#pyramidGrad)" stroke-width="1.5" />
-      <!-- Inner terrace lines -->
-      <line x1="400" y1="310" x2="800" y2="310" stroke="#D4A84B" stroke-width="0.5" opacity="0.3" />
-      <line x1="467" y1="185" x2="733" y2="185" stroke="#D4A84B" stroke-width="0.5" opacity="0.2" />
-      <line x1="333" y1="435" x2="867" y2="435" stroke="#D4A84B" stroke-width="0.4" opacity="0.15" />
-      <!-- Apex detail -->
-      <circle cx="600" cy="80" r="6" fill="none" stroke="#F4C563" stroke-width="0.5" opacity="0.5" />
-      <circle cx="600" cy="80" r="2" fill="#F4C563" opacity="0.4" />
+      <ellipse cx="600" cy="400" rx="500" ry="300" fill="url(#pyramidGlow)" />
+      <polygon points="600,40 1050,650 150,650" fill="none" stroke="url(#pyramidGrad)" stroke-width="3" />
+      <line x1="375" y1="345" x2="825" y2="345" stroke="#D4A84B" stroke-width="2" opacity="0.3" />
+      <line x1="450" y1="193" x2="750" y2="193" stroke="#D4A84B" stroke-width="1.5" opacity="0.25" />
+      <line x1="300" y1="497" x2="900" y2="497" stroke="#D4A84B" stroke-width="1.5" opacity="0.2" />
+      <circle cx="600" cy="60" r="8" fill="none" stroke="#F4C563" stroke-width="1.5" opacity="0.6" />
+      <circle cx="600" cy="60" r="3" fill="#F4C563" opacity="0.5" />
     </svg>
   </div>
 
-  <!-- Light sweep animation -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div
-      class="absolute top-0 bottom-0 w-[200px]"
-      style="background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.04), transparent); animation: light-sweep 20s ease-in-out infinite;"
-    ></div>
-  </div>
-
-  <!-- Water ripple reflections -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div
-      class="absolute top-[20%] left-[25%] w-[600px] h-[300px] rounded-full"
-      style="background: radial-gradient(ellipse at center, rgba(212, 168, 75, 0.06), transparent 70%); animation: ripple-1 10s ease-in-out infinite;"
-    ></div>
-    <div
-      class="absolute top-[40%] left-[45%] w-[500px] h-[250px] rounded-full"
-      style="background: radial-gradient(ellipse at center, rgba(212, 168, 75, 0.04), transparent 70%); animation: ripple-2 13s ease-in-out infinite;"
-    ></div>
-  </div>
-
   <!-- Content -->
-  <div class="relative z-10 text-center px-6 max-w-5xl">
-    <!-- Mono overline -->
-    <p
-      class="font-mono text-xs tracking-widest text-stone uppercase mb-8 opacity-0"
-      style="animation: fade-in 1.5s ease forwards 0.3s;"
-    >
-      EST. 2019 /// LOS ANGELES
-    </p>
+  <div class="relative z-10 text-center px-6 max-w-6xl">
+    <!-- Owl emblem -->
+    <div class="flex justify-center mb-6 opacity-0" style="animation: fade-in 0.4s ease forwards 0.1s;">
+      <svg viewBox="0 0 80 80" class="w-20 h-20" fill="none">
+        <ellipse cx="40" cy="32" rx="14" ry="11" stroke="#D4A84B" stroke-width="2"/>
+        <circle cx="35" cy="30" r="4" fill="none" stroke="#F4C563" stroke-width="1.5"/>
+        <circle cx="45" cy="30" r="4" fill="none" stroke="#F4C563" stroke-width="1.5"/>
+        <circle cx="35" cy="30" r="1.5" fill="#F4C563"/>
+        <circle cx="45" cy="30" r="1.5" fill="#F4C563"/>
+        <polygon points="40,33 38,37 42,37" fill="#D4A84B"/>
+        <line x1="30" y1="24" x2="27" y2="17" stroke="#D4A84B" stroke-width="2" stroke-linecap="round"/>
+        <line x1="50" y1="24" x2="53" y2="17" stroke="#D4A84B" stroke-width="2" stroke-linecap="round"/>
+        <path d="M26,32 Q18,38 22,46" fill="none" stroke="#D4A84B" stroke-width="1.5"/>
+        <path d="M54,32 Q62,38 58,46" fill="none" stroke="#D4A84B" stroke-width="1.5"/>
+        <polygon points="40,45 58,68 22,68" stroke="#D4A84B" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
 
-    <!-- Giant title -->
-    <h1
-      class="font-display font-light leading-[0.85] text-ivory amber-glow mb-4 opacity-0"
-      style="font-size: clamp(3rem, 12vw, 10rem); animation: fade-up 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;"
-    >
-      TYRELL<br />INDUSTRIES
-    </h1>
+    <!-- Corner accents container -->
+    <div class="corner-accents p-8 md:p-12">
+      <div class="corner-accents-inner">
+        <!-- Giant title -->
+        <h1
+          class="text-ivory amber-glow mb-2 opacity-0"
+          style="font-size: clamp(5rem, 15vw, 14rem); animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;"
+        >
+          TYRELL
+        </h1>
 
-    <!-- Tagline -->
-    <p
-      class="font-display italic text-2xl text-stone font-light mb-8 opacity-0"
-      style="animation: fade-in 1.5s ease forwards 1.0s;"
-    >
-      More human than human.
-    </p>
+        <p
+          class="font-mono text-amber tracking-[0.3em] text-lg md:text-2xl font-bold opacity-0"
+          style="animation: fade-in 0.4s ease forwards 0.3s;"
+        >
+          CORPORATION
+        </p>
+      </div>
+    </div>
 
-    <!-- Divider -->
+    <!-- Status data bar -->
     <div
-      class="w-16 h-px bg-amber mx-auto my-8 opacity-0"
-      style="animation: fade-in 1.5s ease forwards 1.2s;"
-    ></div>
-
-    <!-- Division labels -->
-    <p
-      class="font-mono text-sm tracking-[0.3em] text-amber opacity-0"
-      style="animation: fade-in 1.5s ease forwards 1.5s;"
+      class="mt-8 flex flex-wrap justify-center gap-4 md:gap-8 opacity-0"
+      style="animation: fade-in 0.4s ease forwards 0.4s;"
     >
-      NEXUS // GENESIS // PROMETHEUS
-    </p>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/60">SECTOR: <span class="text-amber">SOL-3</span></span>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/40">//</span>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/60">STATUS: <span class="text-amber">OPERATIONAL</span></span>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/40">//</span>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/60">UPLINK: <span class="text-amber">ACTIVE</span></span>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/40">//</span>
+      <span class="font-mono text-[10px] md:text-xs tracking-widest text-stone/60">WORLDS: <span class="text-amber">12,847</span></span>
+    </div>
   </div>
-
-  <!-- Bottom grid line -->
-  <div class="absolute bottom-0 left-0 right-0 grid-line"></div>
 </section>

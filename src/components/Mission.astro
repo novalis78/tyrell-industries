@@ -1,39 +1,115 @@
 ---
+const zones = [
+  {
+    sector: "SECTOR 001",
+    name: "SOL SYSTEM",
+    coords: "RA 00h 00m / DEC +00\u00B000'",
+    personnel: "1,247,000",
+    colonies: "8 PLANETARY BODIES",
+    status: "PRIMARY HQ",
+    statusType: "active",
+  },
+  {
+    sector: "SECTOR 012",
+    name: "ALPHA CENTAURI",
+    coords: "RA 14h 39m / DEC -60\u00B050'",
+    personnel: "892,000",
+    colonies: "1,847 COLONIES",
+    status: "OPERATIONAL",
+    statusType: "active",
+  },
+  {
+    sector: "SECTOR 024",
+    name: "SIGMA DRACONIS",
+    coords: "RA 19h 32m / DEC +69\u00B040'",
+    personnel: "641,000",
+    colonies: "2,102 COLONIES",
+    status: "OPERATIONAL",
+    statusType: "active",
+  },
+  {
+    sector: "SECTOR 031",
+    name: "TANNHAUSER GATE",
+    coords: "RA [REDACTED] / DEC [REDACTED]",
+    personnel: "[CLASSIFIED]",
+    colonies: "47 STATIONS",
+    status: "RESTRICTED",
+    statusType: "classified",
+  },
+  {
+    sector: "SECTOR 038",
+    name: "ORION SPUR",
+    coords: "RA 05h 35m / DEC -05\u00B023'",
+    personnel: "203,000",
+    colonies: "3,411 COLONIES",
+    status: "OPERATIONAL",
+    statusType: "active",
+  },
+  {
+    sector: "SECTOR 047",
+    name: "OUTER RIM TERRITORIES",
+    coords: "RA [VARIES] / DEC [VARIES]",
+    personnel: "127,000",
+    colonies: "4,200+ COLONIES",
+    status: "EXPANSION",
+    statusType: "active",
+  },
+];
 ---
 
-<section id="mission" class="py-32 bg-void">
-  <div class="max-w-5xl mx-auto px-6">
-    <!-- Large headline -->
-    <div class="reveal">
-      <h2
-        class="font-display font-light leading-tight text-ivory text-left"
-        style="font-size: clamp(2rem, 5vw, 3.5rem);"
-      >
-        We design life at the molecular level.
-      </h2>
+<section id="operations" class="py-16 bg-void">
+  <div class="max-w-[1600px] mx-auto px-4">
+    <!-- Section header -->
+    <div class="reveal mb-4">
+      <span class="inline-block bg-amber text-void font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
+        INTERSTELLAR OPERATIONS
+      </span>
+    </div>
+    <div class="reveal mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="text-ivory">INTERSTELLAR PRESENCE</h2>
+      <p class="font-mono text-xs text-stone/60 tracking-wider">
+        6 OPERATIONAL ZONES // 47 STAR SYSTEMS // 12,847 WORLDS
+      </p>
     </div>
 
-    <!-- Body text -->
-    <div class="mt-16 grid md:grid-cols-2 gap-16">
-      <div class="reveal reveal-delay-1">
-        <p class="text-stone text-lg leading-relaxed">
-          Tyrell Industries pioneers synthetic biological systems of unparalleled sophistication. Our molecular design teams engineer organic tissue, neural substrates, and cognitive frameworks from base elements &mdash; constructing consciousness itself from the atomic level upward. Each creation represents millions of hours of computational modeling refined into living form.
-        </p>
-        <p class="text-stone text-lg leading-relaxed mt-6">
-          Our cognitive architecture division develops neural networks that exceed baseline human metrics across every measurable dimension. Pattern recognition, linguistic processing, creative synthesis, emotional depth &mdash; engineered to specification, optimized beyond natural selection's crude approximations.
-        </p>
-      </div>
+    <!-- Zones grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      {zones.map((zone, i) => (
+        <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-0`}>
+          <!-- Card header -->
+          <div class="p-4 pb-3 border-b border-amber/10">
+            <div class="flex items-start justify-between mb-2">
+              <span class="font-mono text-[10px] tracking-[0.2em] text-amber/60">{zone.sector}</span>
+              <span class={`font-mono text-[10px] tracking-widest ${
+                zone.statusType === 'classified' ? 'stamp-classified' : 'text-amber font-bold'
+              }`}>
+                {zone.status}
+              </span>
+            </div>
+            <h3 class="text-ivory text-xl tracking-wide" style="font-size: 1.25rem;">{zone.name}</h3>
+          </div>
 
-      <div class="reveal reveal-delay-2">
-        <div class="pull-quote">
-          <p class="font-display italic text-xl text-ivory leading-snug">
-            "Commerce is our goal here at Tyrell. More human than human is our motto."
-          </p>
-          <p class="font-mono text-xs tracking-widest text-stone mt-6">
-            &mdash; DR. ELDON TYRELL, FOUNDER
-          </p>
+          <!-- Card body — dense spec table -->
+          <div class="p-4">
+            <table class="w-full font-mono text-[11px]">
+              <tbody>
+                <tr class="border-b border-amber/5">
+                  <td class="text-stone/50 py-1 pr-4">COORDINATES</td>
+                  <td class="text-stone text-right py-1">{zone.coords}</td>
+                </tr>
+                <tr class="border-b border-amber/5">
+                  <td class="text-stone/50 py-1 pr-4">PERSONNEL</td>
+                  <td class="text-amber text-right py-1">{zone.personnel}</td>
+                </tr>
+                <tr>
+                  <td class="text-stone/50 py-1 pr-4">INSTALLATIONS</td>
+                  <td class="text-stone text-right py-1">{zone.colonies}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>

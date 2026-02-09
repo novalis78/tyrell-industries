@@ -1,76 +1,104 @@
 ---
 ---
 
-<section id="vk" class="py-32 bg-obsidian relative overflow-hidden">
+<section id="vk" class="py-16 bg-obsidian relative overflow-hidden">
   <!-- Grid background -->
-  <div class="absolute inset-0 industrial-grid opacity-20 pointer-events-none"></div>
+  <div class="absolute inset-0 industrial-grid-dense opacity-20 pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-4xl mx-auto px-6">
-    <div class="reveal mb-12 text-center">
-      <p class="font-mono text-xs tracking-[0.3em] text-amber mb-4">COMPLIANCE PROTOCOL</p>
-      <h2 class="font-display font-light text-ivory" style="font-size: clamp(2rem, 5vw, 3.5rem);">
-        Voight-Kampff Empathy Test
-      </h2>
-      <p class="font-mono text-xs text-stone tracking-wider mt-4">
-        MANDATORY FOR ALL PERSONNEL // SECTOR 6 DIRECTIVE
+  <div class="relative z-10 max-w-[1600px] mx-auto px-4">
+    <div class="reveal mb-4">
+      <span class="inline-block bg-danger text-ivory font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
+        COMPLIANCE PROTOCOL
+      </span>
+    </div>
+    <div class="reveal mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="text-ivory">VOIGHT-KAMPFF</h2>
+      <p class="font-mono text-xs text-stone/60 tracking-wider">
+        MANDATORY FOR ALL PERSONNEL // ALL SECTORS // ENFORCEMENT: IMMEDIATE
       </p>
     </div>
 
-    <!-- Terminal -->
-    <div class="reveal reveal-delay-1 terminal">
-      <div class="terminal-content space-y-4">
-        <p><span class="text-stone/60">[VK-SYSTEM v4.7]</span> <span class="text-amber">INITIALIZING EMPATHY RESPONSE ANALYSIS...</span></p>
-        <p><span class="text-stone/60">[CALIBRATING]</span> Pupil dilation tracking: <span class="text-amber-bright">ACTIVE</span></p>
-        <p><span class="text-stone/60">[CALIBRATING]</span> Blush response monitoring: <span class="text-amber-bright">ACTIVE</span></p>
-        <p><span class="text-stone/60">[CALIBRATING]</span> Capillary fluctuation: <span class="text-amber-bright">ACTIVE</span></p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <!-- Terminal 1: VK Test -->
+      <div class="reveal reveal-delay-1 terminal">
+        <div class="terminal-header">
+          TYRELL CORP SECURE TERMINAL // VK-SYSTEM v4.7 // RECORDING: ACTIVE
+        </div>
+        <div class="terminal-content space-y-3">
+          <p><span class="text-stone/60">[INIT]</span> <span class="text-amber">INITIALIZING EMPATHY RESPONSE ANALYSIS...</span></p>
+          <p><span class="text-stone/60">[CAL]</span> PUPIL DILATION TRACKING: <span class="text-amber-bright">ACTIVE</span></p>
+          <p><span class="text-stone/60">[CAL]</span> BLUSH RESPONSE MONITORING: <span class="text-amber-bright">ACTIVE</span></p>
+          <p><span class="text-stone/60">[CAL]</span> CAPILLARY FLUCTUATION: <span class="text-amber-bright">ACTIVE</span></p>
 
-        <div class="divider-amber my-4"></div>
+          <div class="divider-amber my-3"></div>
 
-        <p class="text-ivory">
-          <span class="text-amber">&gt;</span> You're in a desert, walking along in the sand, when all of a sudden you look down and see a tortoise. It's crawling toward you...
-        </p>
-        <p class="text-ivory">
-          <span class="text-amber">&gt;</span> You reach down and flip the tortoise over on its back. The tortoise lays on its back, its belly baking in the hot sun, beating its legs trying to turn itself over, but it can't. Not without your help.
-        </p>
-        <p class="text-ivory">
-          <span class="text-amber">&gt;</span> But you're not helping. Why is that?
-        </p>
-
-        <div class="divider-amber my-4"></div>
-
-        <p>
-          <span class="text-stone/60">[ANALYZING]</span>
-          <span class="text-amber">SUBJECT RESPONSE:
-            <span class="inline-block w-2 h-4 bg-amber/80 ml-1" style="animation: amber-pulse 0.8s step-end infinite;"></span>
-          </span>
-        </p>
-
-        <div class="mt-6 pt-4 border-t border-amber/10 flex flex-col sm:flex-row gap-3">
-          <p class="font-mono text-[10px] text-stone/50 tracking-wider">
-            VK SESSION: <span class="text-amber/60">VK-2026-0847</span>
+          <p class="text-ivory text-xs">
+            <span class="text-amber">&gt;</span> YOU'RE IN A DESERT, WALKING ALONG IN THE SAND, WHEN ALL OF A SUDDEN YOU LOOK DOWN AND SEE A TORTOISE. IT'S CRAWLING TOWARD YOU...
           </p>
-          <p class="font-mono text-[10px] text-stone/50 tracking-wider">
-            EXAMINER: <span class="text-amber/60">HOLDEN, D.</span>
+          <p class="text-ivory text-xs">
+            <span class="text-amber">&gt;</span> YOU REACH DOWN AND FLIP THE TORTOISE OVER ON ITS BACK. THE TORTOISE LAYS ON ITS BACK, ITS BELLY BAKING IN THE HOT SUN, BEATING ITS LEGS TRYING TO TURN ITSELF OVER. BUT IT CAN'T. NOT WITHOUT YOUR HELP.
           </p>
-          <p class="font-mono text-[10px] text-stone/50 tracking-wider">
-            STATUS: <span class="text-amber">AWAITING INPUT</span>
+          <p class="text-ivory text-xs">
+            <span class="text-amber">&gt;</span> BUT YOU'RE NOT HELPING. WHY IS THAT?
           </p>
+
+          <div class="divider-amber my-3"></div>
+
+          <p>
+            <span class="text-stone/60">[ANALYZING]</span>
+            <span class="text-amber">SUBJECT RESPONSE:
+              <span class="inline-block w-2 h-4 bg-amber/80 ml-1" style="animation: blink-cursor 0.8s step-end infinite;"></span>
+            </span>
+          </p>
+
+          <div class="mt-4 pt-3 border-t border-amber/10 flex flex-wrap gap-4">
+            <span class="font-mono text-[10px] text-stone/50 tracking-wider">SESSION: <span class="text-amber/60">VK-2040-0847</span></span>
+            <span class="font-mono text-[10px] text-stone/50 tracking-wider">EXAMINER: <span class="text-amber/60">HOLDEN, D.</span></span>
+            <span class="font-mono text-[10px] text-stone/50 tracking-wider">STATUS: <span class="text-amber">AWAITING INPUT</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal 2: Compliance Log -->
+      <div class="reveal reveal-delay-2 terminal">
+        <div class="terminal-header">
+          COMPLIANCE LOG // SESSION: ENCRYPTED // CLEARANCE: LEVEL 2
+        </div>
+        <div class="terminal-content space-y-2 text-xs">
+          <p><span class="text-stone/60">[2040-11-14 08:12:04]</span> VK TEST INITIATED // SECTOR SOL-3 // SUBJECT: [REDACTED]</p>
+          <p><span class="text-stone/60">[2040-11-14 08:12:47]</span> BASELINE CALIBRATION COMPLETE // ALL SENSORS NOMINAL</p>
+          <p><span class="text-stone/60">[2040-11-14 08:14:22]</span> QUESTION SET A-7 ADMINISTERED // RESPONSE TIME: 2.4S</p>
+          <p><span class="text-stone/60">[2040-11-14 08:15:01]</span> <span class="text-amber">PUPIL DILATION ANOMALY DETECTED // FLAGGED</span></p>
+          <p><span class="text-stone/60">[2040-11-14 08:16:33]</span> QUESTION SET B-3 ADMINISTERED // RESPONSE TIME: 1.8S</p>
+          <p><span class="text-stone/60">[2040-11-14 08:17:12]</span> CAPILLARY FLUCTUATION WITHIN NORMAL PARAMETERS</p>
+          <p><span class="text-stone/60">[2040-11-14 08:18:44]</span> <span class="text-amber">EMOTIONAL RESPONSE INCONCLUSIVE // EXTENDING TEST</span></p>
+          <p><span class="text-stone/60">[2040-11-14 08:20:07]</span> QUESTION SET C-1 ADMINISTERED // RESPONSE TIME: 4.1S</p>
+          <p><span class="text-stone/60">[2040-11-14 08:21:30]</span> <span class="text-danger">BLUSH RESPONSE ABSENT // ANOMALY CONFIRMED</span></p>
+          <p><span class="text-stone/60">[2040-11-14 08:22:15]</span> <span class="text-danger">ALERT: BLADE RUNNER UNIT DISPATCHED TO SECTOR 4</span></p>
+
+          <div class="mt-4 pt-3 border-t border-amber/10 flex flex-wrap gap-4">
+            <span class="font-mono text-[10px] text-stone/50 tracking-wider">RECORDING: <span class="text-danger">ACTIVE</span></span>
+            <span class="font-mono text-[10px] text-stone/50 tracking-wider">SESSION: <span class="text-amber/60">ENCRYPTED</span></span>
+            <span class="font-mono text-[10px] text-stone/50 tracking-wider">RESULT: <span class="text-danger">POSITIVE IDENTIFICATION</span></span>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- CTA buttons -->
-    <div class="reveal reveal-delay-2 mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#" class="btn-primary text-center">BEGIN VK ASSESSMENT</a>
-      <a href="#" class="btn-secondary text-center">REQUEST EXEMPTION</a>
+    <div class="reveal reveal-delay-3 mt-8 flex flex-col sm:flex-row gap-4">
+      <a href="#" class="btn-primary">BEGIN VK ASSESSMENT</a>
+      <a href="#" class="btn-secondary">REQUEST EXEMPTION</a>
+      <a href="#" class="btn-danger">REPORT SUSPECTED REPLICANT</a>
     </div>
 
     <!-- Legal disclaimer -->
-    <div class="reveal reveal-delay-3 mt-8 text-center">
-      <p class="font-mono text-[10px] text-stone/40 tracking-wider max-w-lg mx-auto">
-        ALL PERSONNEL MUST SUBMIT TO VOIGHT-KAMPFF TESTING PER CORPORATE POLICY TI-4774.
-        REFUSAL IS GROUNDS FOR IMMEDIATE TERMINATION AND INVESTIGATION.
-        REPLICANTS DISCOVERED THROUGH VK TESTING ARE SUBJECT TO RETIREMENT.
+    <div class="reveal mt-6">
+      <p class="font-mono text-[10px] text-stone/40 tracking-wider max-w-3xl">
+        ALL PERSONNEL MUST SUBMIT TO VOIGHT-KAMPFF TESTING PER CORPORATE POLICY VK-4774.
+        REFUSAL IS GROUNDS FOR IMMEDIATE RETIREMENT AND INVESTIGATION.
+        REPLICANTS DISCOVERED THROUGH VK TESTING ARE SUBJECT TO RETIREMENT PER INTERSTELLAR LAW.
+        TESTING ADMINISTERED BY AUTHORIZED BLADE RUNNER UNITS ONLY.
       </p>
     </div>
   </div>

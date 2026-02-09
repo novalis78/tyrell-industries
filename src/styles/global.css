@@ -5,11 +5,24 @@
   --color-obsidian: #121210;
   --color-amber: #D4A84B;
   --color-amber-bright: #F4C563;
+  --color-amber-dim: #8B6F2A;
   --color-ivory: #F0EBE0;
   --color-stone: #9A9688;
-  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --color-danger: #CC3333;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* ============================================
+   GLOBAL HEADING RULES — FONT-BLACK UPPERCASE
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  font-family: var(--font-display);
 }
 
 /* ============================================
@@ -17,7 +30,7 @@
    ============================================ */
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -26,31 +39,19 @@
   to { opacity: 1; }
 }
 
-@keyframes light-sweep {
-  0% { transform: translateX(-100%); opacity: 0; }
-  10% { opacity: 0.6; }
-  90% { opacity: 0.6; }
-  100% { transform: translateX(200vw); opacity: 0; }
-}
-
-@keyframes ripple-1 {
-  0%, 100% { transform: scale(1); opacity: 0.08; }
-  50% { transform: scale(1.15); opacity: 0.03; }
-}
-
-@keyframes ripple-2 {
-  0%, 100% { transform: scale(1.1); opacity: 0.06; }
-  50% { transform: scale(0.95); opacity: 0.1; }
-}
-
 @keyframes amber-pulse {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
 }
 
-@keyframes scanline {
+@keyframes scanline-sweep {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100vh); }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* ============================================
@@ -84,6 +85,67 @@ body {
 }
 
 /* ============================================
+   SCANLINES OVERLAY — APPLIED TO BODY
+   ============================================ */
+
+.scanlines {
+  position: relative;
+}
+
+.scanlines::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.06),
+    rgba(0, 0, 0, 0.06) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ============================================
+   HAZARD STRIPES
+   ============================================ */
+
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    #0A0A08,
+    #0A0A08 20px,
+    #8B6F2A 20px,
+    #8B6F2A 40px
+  );
+}
+
+.hazard-stripes-thin {
+  background: repeating-linear-gradient(
+    45deg,
+    #0A0A08,
+    #0A0A08 10px,
+    #8B6F2A 10px,
+    #8B6F2A 20px
+  );
+}
+
+.hazard-bar {
+  height: 6px;
+  background: repeating-linear-gradient(
+    45deg,
+    #0A0A08,
+    #0A0A08 8px,
+    #D4A84B 8px,
+    #D4A84B 16px
+  );
+}
+
+/* ============================================
    CLIP-CORNER
    ============================================ */
 
@@ -97,28 +159,28 @@ body {
 }
 
 /* ============================================
-   CORP-CARD
+   CORP-CARD — HEAVY BORDERS
    ============================================ */
 
 .corp-card {
   position: relative;
   background: #121210;
-  border: 1px solid rgba(18, 18, 16, 0.8);
+  border: 2px solid rgba(212, 168, 75, 0.15);
   clip-path: polygon(
     8px 0, 100% 0,
     100% calc(100% - 8px),
     calc(100% - 8px) 100%,
     0 100%, 0 8px
   );
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
 }
 
 .corp-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(212, 168, 75, 0.08), 0 0 60px rgba(212, 168, 75, 0.04);
-  border-color: rgba(212, 168, 75, 0.2);
+  box-shadow: 0 0 30px rgba(212, 168, 75, 0.12), 0 0 60px rgba(212, 168, 75, 0.06);
+  border-color: rgba(212, 168, 75, 0.4);
 }
 
 .corp-card::before {
@@ -126,15 +188,111 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
-  height: 2px;
+  width: 100%;
+  height: 4px;
   background: linear-gradient(90deg, #D4A84B, #F4C563, #D4A84B);
-  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 10;
 }
 
-.corp-card:hover::before {
-  width: 100%;
+/* ============================================
+   CLASSIFICATION STAMPS
+   ============================================ */
+
+.stamp-classified {
+  display: inline-block;
+  border: 3px solid #CC3333;
+  color: #CC3333;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+.stamp-restricted {
+  display: inline-block;
+  border: 3px solid #D4A84B;
+  color: #D4A84B;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+.stamp-discontinued {
+  display: inline-block;
+  border: 3px solid #9A9688;
+  color: #9A9688;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+/* ============================================
+   CORNER ACCENT BORDERS (L-BRACKETS)
+   ============================================ */
+
+.corner-accents {
+  position: relative;
+}
+
+.corner-accents::before,
+.corner-accents::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-color: #D4A84B;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.corner-accents::before {
+  top: 0;
+  left: 0;
+  border-width: 4px 0 0 4px;
+}
+
+.corner-accents::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 4px 4px 0;
+}
+
+.corner-accents-inner {
+  position: relative;
+}
+
+.corner-accents-inner::before,
+.corner-accents-inner::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-color: #D4A84B;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.corner-accents-inner::before {
+  top: 0;
+  right: 0;
+  border-width: 4px 4px 0 0;
+}
+
+.corner-accents-inner::after {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 4px 4px;
 }
 
 /* ============================================
@@ -142,7 +300,7 @@ body {
    ============================================ */
 
 .amber-glow {
-  text-shadow: 0 0 60px rgba(212, 168, 75, 0.3), 0 0 120px rgba(212, 168, 75, 0.1);
+  text-shadow: 0 0 60px rgba(212, 168, 75, 0.4), 0 0 120px rgba(212, 168, 75, 0.15);
 }
 
 /* ============================================
@@ -190,20 +348,27 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #c44;
+  background: #CC3333;
   animation: amber-pulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(204, 68, 68, 0.6);
+  box-shadow: 0 0 8px rgba(204, 51, 51, 0.6);
 }
 
 /* ============================================
-   INDUSTRIAL GRID
+   INDUSTRIAL GRID — DENSE
    ============================================ */
 
 .industrial-grid {
   background-image:
-    linear-gradient(rgba(212, 168, 75, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 168, 75, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(212, 168, 75, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 75, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.industrial-grid-dense {
+  background-image:
+    linear-gradient(rgba(212, 168, 75, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 75, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* ============================================
@@ -217,22 +382,13 @@ body {
 }
 
 /* ============================================
-   GRID LINE
-   ============================================ */
-
-.grid-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 168, 75, 0.15), transparent);
-}
-
-/* ============================================
-   TERMINAL
+   TERMINAL — HEAVY
    ============================================ */
 
 .terminal {
   position: relative;
   background: #000;
-  border: 1px solid rgba(212, 168, 75, 0.25);
+  border: 3px solid rgba(212, 168, 75, 0.4);
   clip-path: polygon(
     8px 0, 100% 0,
     100% calc(100% - 8px),
@@ -241,16 +397,16 @@ body {
   );
 }
 
-.terminal::before {
-  content: '> TYRELL CORP SECURE TERMINAL';
+.terminal-header {
   display: block;
   font-family: var(--font-mono);
   font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.15em;
-  color: #D4A84B;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(212, 168, 75, 0.15);
-  background: rgba(212, 168, 75, 0.03);
+  color: #0A0A08;
+  padding: 0.5rem 1rem;
+  background: #D4A84B;
+  text-transform: uppercase;
 }
 
 .terminal-content {
@@ -304,7 +460,7 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid rgba(212, 168, 75, 0.4);
+  border: 2px solid rgba(212, 168, 75, 0.4);
   clip-path: polygon(
     8px 0, 100% 0,
     100% calc(100% - 8px),
@@ -319,34 +475,37 @@ body {
   background: rgba(212, 168, 75, 0.05);
 }
 
-/* ============================================
-   PULL QUOTE
-   ============================================ */
-
-.pull-quote {
-  position: relative;
-  padding-left: 2rem;
+.btn-danger {
+  display: inline-block;
+  background: #CC3333;
+  color: #F0EBE0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  clip-path: polygon(
+    8px 0, 100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%, 0 8px
+  );
+  transition: box-shadow 0.3s ease;
 }
 
-.pull-quote::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #D4A84B, rgba(212, 168, 75, 0.2));
-}
-
 /* ============================================
-   REVEAL ON SCROLL
+   REVEAL ON SCROLL — FAST
    ============================================ */
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
@@ -354,9 +513,9 @@ body {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.15s; }
-.reveal-delay-2 { transition-delay: 0.3s; }
-.reveal-delay-3 { transition-delay: 0.45s; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
 /* ============================================
    REDUCED MOTION

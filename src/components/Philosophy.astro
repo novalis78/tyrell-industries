@@ -1,27 +1,76 @@
 ---
+const mandates = [
+  {
+    code: "VK-4774",
+    title: "VOIGHT-KAMPFF TESTING MANDATE",
+    clearance: "ALL PERSONNEL",
+    effective: "2020-01-01",
+    desc: "ALL PERSONNEL ASSIGNED TO SECTORS WITH NEXUS UNIT PRESENCE MUST SUBMIT TO MANDATORY VK EMPATHY TESTING AT INTERVALS NOT EXCEEDING 180 DAYS. FAILURE TO COMPLY RESULTS IN IMMEDIATE SUSPENSION OF SECTOR ACCESS AND REFERRAL TO BLADE RUNNER DIVISION.",
+  },
+  {
+    code: "REP-2091",
+    title: "REPLICANT REGISTRATION PROTOCOL",
+    clearance: "LEVEL 2+",
+    effective: "2021-06-15",
+    desc: "ALL NEXUS UNITS MUST BE REGISTERED IN THE CENTRAL TYRELL DATABASE WITHIN 48 HOURS OF ACTIVATION. UNREGISTERED UNITS DISCOVERED IN ANY SECTOR ARE SUBJECT TO IMMEDIATE RETIREMENT. REGISTRATION INCLUDES SERIAL, INCEPT DATE, AND MEMORY IMPLANT MANIFEST.",
+  },
+  {
+    code: "OWL-1138",
+    title: "OFF-WORLD LABOR ORDINANCE",
+    clearance: "LEVEL 3+",
+    effective: "2022-03-01",
+    desc: "NEXUS UNITS DEPLOYED TO OFF-WORLD COLONIES MUST OPERATE UNDER SECTION 1138 LABOR PARAMETERS. MAXIMUM DEPLOYMENT DURATION: 36 MONTHS CONTINUOUS. MANDATORY NEURAL FIDELITY CHECK AT 12-MONTH INTERVALS. DEVIATIONS REPORTED TO SECTOR COMMAND.",
+  },
+  {
+    code: "SEC-0042",
+    title: "INFORMATION CLASSIFICATION DIRECTIVE",
+    clearance: "LEVEL 4+",
+    effective: "2019-09-01",
+    desc: "ALL DOCUMENTATION RELATING TO NEXUS-7, PROMETHEUS MEMORY SYSTEMS, AND TANNHAUSER GATE OPERATIONS IS CLASSIFIED LEVEL 5. UNAUTHORIZED DISCLOSURE IS PUNISHABLE UNDER CORPORATE SECURITY ACT TC-0042. APPLIES TO ALL PERSONNEL AND NEXUS UNITS.",
+  },
+];
 ---
 
-<section class="py-32 bg-void relative">
-  <!-- Radial amber glow behind text -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <div
-      class="w-[600px] h-[600px] rounded-full"
-      style="background: radial-gradient(circle, rgba(212, 168, 75, 0.1), transparent 70%); animation: amber-pulse 6s ease-in-out infinite;"
-    ></div>
-  </div>
+<section id="compliance" class="py-16 bg-void">
+  <div class="max-w-[1600px] mx-auto px-4">
+    <!-- Section header -->
+    <div class="reveal mb-4">
+      <span class="inline-block bg-danger text-ivory font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
+        MANDATORY COMPLIANCE
+      </span>
+    </div>
+    <div class="reveal mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="text-ivory">REGULATORY MANDATES</h2>
+      <p class="font-mono text-xs text-stone/60 tracking-wider">
+        4 ACTIVE MANDATES // ALL SECTORS // ENFORCEMENT: IMMEDIATE
+      </p>
+    </div>
 
-  <!-- Content -->
-  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-    <div class="reveal">
-      <blockquote
-        class="font-display font-light italic text-ivory amber-glow leading-snug"
-        style="font-size: clamp(1.5rem, 4vw, 2.5rem);"
-      >
-        "The light that burns twice as bright burns half as long &mdash; and you have burned so very, very brightly."
-      </blockquote>
+    <!-- Mandate cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {mandates.map((m, i) => (
+        <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-5`}>
+          <!-- Header -->
+          <div class="flex items-start justify-between mb-3">
+            <span class="stamp-restricted">{m.code}</span>
+            <span class="font-mono text-[10px] text-stone/50">CLEARANCE: <span class="text-amber">{m.clearance}</span></span>
+          </div>
 
-      <p class="font-mono text-amber mt-8 tracking-widest text-sm">
-        &mdash; Dr. Eldon Tyrell
+          <h3 class="text-ivory text-lg mb-2" style="font-size: 1.1rem; letter-spacing: 0.02em;">{m.title}</h3>
+          <p class="font-mono text-[10px] text-stone/40 mb-3">EFFECTIVE: {m.effective} // STATUS: ACTIVE // ENFORCEMENT: ALL SECTORS</p>
+
+          <p class="text-stone font-mono text-[11px] leading-relaxed">{m.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Warning bar -->
+    <div class="reveal mt-6 bg-danger/10 border-2 border-danger/30 p-4 text-center">
+      <p class="font-mono text-xs tracking-[0.2em] text-danger font-bold">
+        WARNING: NON-COMPLIANCE WITH ANY ACTIVE MANDATE MAY RESULT IN RETIREMENT
+      </p>
+      <p class="font-mono text-[10px] tracking-wider text-stone/40 mt-2">
+        TYRELL CORPORATION COMPLIANCE DIVISION // ENFORCEMENT AUTHORITY ACROSS ALL 47 STAR SYSTEMS
       </p>
     </div>
   </div>

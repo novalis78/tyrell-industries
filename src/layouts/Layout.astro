@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Tyrell Industries — More Human Than Human",
-  description = "Pioneering synthetic biological systems and cognitive architectures since 2019. Tyrell Industries designs life at the molecular level."
+  title = "TYRELL CORPORATION — MORE HUMAN THAN HUMAN",
+  description = "Tyrell Corporation maintains operational supremacy across all synthetic biological platforms. 12,000+ worlds. 47 star systems. $3.2T revenue."
 } = Astro.props;
 
 const canonicalUrl = "https://tyrell.industries";
@@ -27,7 +27,7 @@ const canonicalUrl = "https://tyrell.industries";
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:site_name" content="Tyrell Industries" />
+    <meta property="og:site_name" content="Tyrell Corporation" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -38,7 +38,7 @@ const canonicalUrl = "https://tyrell.industries";
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Tyrell Industries",
+      "name": "Tyrell Corporation",
       "description": description,
       "url": canonicalUrl,
       "foundingDate": "2019",
@@ -49,14 +49,14 @@ const canonicalUrl = "https://tyrell.industries";
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <title>{title}</title>
   </head>
-  <body class="bg-void text-ivory antialiased overflow-x-hidden">
+  <body class="bg-void text-ivory antialiased overflow-x-hidden scanlines">
     <slot />
   </body>
 </html>

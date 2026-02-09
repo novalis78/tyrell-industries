@@ -1,81 +1,110 @@
 ---
 ---
 
-<footer class="bg-void pt-20 pb-8" style="border-top: 1px solid rgba(212, 168, 75, 0.15);">
-  <div class="max-w-7xl mx-auto px-6">
-    <!-- 4-column grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      <!-- Column 1: Brand -->
-      <div>
-        <div class="flex items-center gap-3 mb-6">
-          <svg viewBox="0 0 32 32" class="w-7 h-7" fill="none">
-            <polygon points="16,2 30,28 2,28" stroke="#D4A84B" stroke-width="1" fill="none" opacity="0.8" />
-            <polygon points="16,10 24,28 8,28" stroke="#D4A84B" stroke-width="0.5" fill="none" opacity="0.4" />
-            <circle cx="16" cy="12" r="1.5" fill="#F4C563" opacity="0.6" />
+<footer class="bg-void">
+  <!-- Hazard stripes top -->
+  <div class="hazard-bar"></div>
+
+  <div class="max-w-[1600px] mx-auto px-4 pt-12 pb-6">
+    <!-- 6-column grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-8 mb-10">
+      <!-- Column 1-2: Company (span-2) -->
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none">
+            <polygon points="32,20 50,54 14,54" stroke="#D4A84B" stroke-width="2.5" fill="none"/>
+            <ellipse cx="32" cy="18" rx="8" ry="6" stroke="#D4A84B" stroke-width="1.5" fill="none"/>
+            <circle cx="29" cy="17" r="2" fill="#F4C563"/>
+            <circle cx="35" cy="17" r="2" fill="#F4C563"/>
+            <line x1="26" y1="13" x2="24" y2="9" stroke="#D4A84B" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="38" y1="13" x2="40" y2="9" stroke="#D4A84B" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
-          <span class="font-display text-lg text-ivory tracking-wider">TYRELL</span>
+          <span class="text-lg text-ivory tracking-wider font-black">TYRELL CORPORATION</span>
         </div>
-        <p class="font-mono text-xs text-stone/60 leading-relaxed">
-          Pioneering synthetic biological systems and cognitive architectures. More human than human.
+        <p class="font-mono text-[11px] text-stone/60 leading-relaxed mb-4 max-w-xs">
+          TYRELL CORPORATION MAINTAINS OPERATIONAL SUPREMACY ACROSS ALL SYNTHETIC BIOLOGICAL PLATFORMS. 12,847 WORLDS. 47 STAR SYSTEMS. $3.2T ANNUAL REVENUE.
         </p>
-        <div class="mt-4 flex items-center gap-2">
+        <div class="flex items-center gap-2">
           <span class="w-2 h-2 bg-amber rounded-full" style="animation: amber-pulse 2s ease-in-out infinite; box-shadow: 0 0 8px rgba(212, 168, 75, 0.6);"></span>
-          <span class="font-mono text-[10px] text-amber tracking-widest">SYSTEMS ONLINE</span>
+          <span class="font-mono text-[10px] text-amber tracking-widest">ALL SYSTEMS OPERATIONAL</span>
         </div>
       </div>
 
-      <!-- Column 2: Divisions -->
+      <!-- Column 3: Divisions -->
       <div>
-        <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">DIVISIONS</h4>
-        <ul class="space-y-3">
-          <li><a href="#nexus" class="font-mono text-sm text-stone hover:text-amber transition-colors">Nexus Series</a></li>
-          <li><a href="#divisions" class="font-mono text-sm text-stone hover:text-amber transition-colors">Genesis Program</a></li>
-          <li><a href="#divisions" class="font-mono text-sm text-stone hover:text-amber transition-colors">Prometheus Initiative</a></li>
-          <li><a href="#divisions" class="font-mono text-sm text-stone hover:text-amber transition-colors">Off-World Operations</a></li>
+        <h4 class="font-mono text-[10px] tracking-[0.2em] text-amber mb-4">DIVISIONS</h4>
+        <ul class="space-y-2">
+          <li><a href="#nexus" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">NEXUS PROGRAM</a></li>
+          <li><a href="#divisions" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">GENESIS</a></li>
+          <li><a href="#divisions" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">PROMETHEUS</a></li>
+          <li><a href="#divisions" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">OFF-WORLD OPS</a></li>
+          <li><a href="#divisions" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">DEFENSE</a></li>
+          <li><a href="#divisions" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">VOIGHT-KAMPFF</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: Company -->
+      <!-- Column 4: Nexus Program -->
       <div>
-        <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">COMPANY</h4>
-        <ul class="space-y-3">
-          <li><a href="#mission" class="font-mono text-sm text-stone hover:text-amber transition-colors">Mission</a></li>
-          <li><a href="#timeline" class="font-mono text-sm text-stone hover:text-amber transition-colors">Corporate History</a></li>
-          <li><a href="#vk" class="font-mono text-sm text-stone hover:text-amber transition-colors">VK Compliance</a></li>
-          <li><span class="font-mono text-sm text-stone/40">Careers [RESTRICTED]</span></li>
+        <h4 class="font-mono text-[10px] tracking-[0.2em] text-amber mb-4">NEXUS PROGRAM</h4>
+        <ul class="space-y-2">
+          <li><a href="#nexus" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">NEXUS-9 SERIES</a></li>
+          <li><span class="font-mono text-[11px] text-stone/30">NEXUS-8 [SUSPENDED]</span></li>
+          <li><span class="font-mono text-[11px] text-stone/30">NEXUS-7 [CLASSIFIED]</span></li>
+          <li><a href="#nexus" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">NEXUS-6 ARCHIVE</a></li>
+          <li><a href="#nexus" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">PRODUCT CATALOGUE</a></li>
         </ul>
       </div>
 
-      <!-- Column 4: Headquarters -->
+      <!-- Column 5: Operations -->
       <div>
-        <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">HEADQUARTERS</h4>
-        <div class="space-y-3">
-          <p class="font-mono text-sm text-stone">Tyrell Pyramid</p>
-          <p class="font-mono text-xs text-stone/60">Sector 4, Los Angeles</p>
-          <p class="font-mono text-xs text-stone/60">Earth // Sol System</p>
-          <div class="divider-amber my-4"></div>
-          <p class="font-mono text-xs text-stone/40">Off-World Division</p>
-          <p class="font-mono text-xs text-stone/40">Coordinates: [CLASSIFIED]</p>
-        </div>
+        <h4 class="font-mono text-[10px] tracking-[0.2em] text-amber mb-4">OPERATIONS</h4>
+        <ul class="space-y-2">
+          <li><a href="#operations" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">SOL SYSTEM</a></li>
+          <li><a href="#operations" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">ALPHA CENTAURI</a></li>
+          <li><a href="#operations" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">SIGMA DRACONIS</a></li>
+          <li><span class="font-mono text-[11px] text-stone/30">TANNHAUSER [RESTRICTED]</span></li>
+          <li><a href="#operations" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">ORION SPUR</a></li>
+          <li><a href="#operations" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">OUTER RIM</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 6: Compliance / Corporate -->
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[0.2em] text-amber mb-4">COMPLIANCE</h4>
+        <ul class="space-y-2">
+          <li><a href="#compliance" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">VK-4774 TESTING</a></li>
+          <li><a href="#compliance" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">REP-2091 REGISTRY</a></li>
+          <li><a href="#compliance" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">OWL-1138 LABOR</a></li>
+          <li><a href="#compliance" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">SEC-0042 CLASSIF.</a></li>
+          <li><a href="#timeline" class="font-mono text-[11px] text-stone hover:text-amber transition-colors">CORPORATE HISTORY</a></li>
+          <li><span class="font-mono text-[11px] text-stone/30">CAREERS [RESTRICTED]</span></li>
+        </ul>
       </div>
     </div>
-
-    <!-- Divider -->
-    <div class="divider-amber mb-6"></div>
 
     <!-- Terminal status bar -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-6">
-        <p class="font-mono text-[10px] text-stone/50 tracking-wider">&copy; 2026 TYRELL INDUSTRIES</p>
-        <p class="font-mono text-[10px] text-stone/30 tracking-wider hidden sm:block">LOS ANGELES // OFF-WORLD COLONIES</p>
-      </div>
-      <div class="flex items-center gap-6">
-        <p class="font-mono text-[10px] text-stone/30 tracking-wider">REPLICANTS ARE NOT PERMITTED ON EARTH</p>
-        <p class="font-mono text-[10px] text-amber/40 tracking-wider">
-          <span class="inline-block w-1.5 h-1.5 bg-amber/60 rounded-full mr-1.5" style="animation: amber-pulse 2s ease-in-out infinite;"></span>
-          VK TESTING: MANDATORY
-        </p>
+    <div class="border-t border-amber/15 pt-4 mb-4">
+      <div class="flex flex-wrap items-center gap-4 md:gap-8 font-mono text-[10px] tracking-wider">
+        <span class="text-stone/50">SYS.STATUS: <span class="text-amber">OPERATIONAL</span></span>
+        <span class="text-stone/30">//</span>
+        <span class="text-stone/50">SECTORS: <span class="text-amber">47</span></span>
+        <span class="text-stone/30">//</span>
+        <span class="text-stone/50">VK TESTING: <span class="text-danger">MANDATORY</span></span>
+        <span class="text-stone/30">//</span>
+        <span class="text-stone/50">UPLINK: <span class="text-amber">ACTIVE</span></span>
+        <span class="text-stone/30">//</span>
+        <span class="text-stone/50">NEXUS-9: <span class="text-amber">IN PRODUCTION</span></span>
       </div>
     </div>
+
+    <!-- Regulatory warning -->
+    <div class="border-t border-amber/10 pt-4">
+      <p class="font-mono text-[9px] text-stone/30 tracking-wider leading-relaxed">
+        &copy; 2040 TYRELL CORPORATION. ALL RIGHTS RESERVED ACROSS ALL 47 STAR SYSTEMS AND ASSOCIATED TERRITORIES. UNAUTHORIZED REPRODUCTION OF NEXUS TECHNOLOGY IS PUNISHABLE UNDER INTERSTELLAR CORPORATE LAW. REPLICANTS ARE NOT PERMITTED ON EARTH WITHOUT VALID DOCUMENTATION AND VK CLEARANCE. ALL PERSONNEL SUBJECT TO MANDATORY VOIGHT-KAMPFF TESTING PER DIRECTIVE VK-4774. TYRELL CORPORATION IS THE SOLE AUTHORIZED MANUFACTURER OF SYNTHETIC BIOLOGICAL PLATFORMS UNDER LICENSE FROM THE INTERSTELLAR COMMERCE AUTHORITY. NEXUS, GENESIS, PROMETHEUS, AND VOIGHT-KAMPFF ARE REGISTERED TRADEMARKS OF TYRELL CORPORATION. THIS COMMUNICATION AND ANY ATTACHMENTS ARE CLASSIFIED UNDER SEC-0042. UNAUTHORIZED DISCLOSURE MAY RESULT IN RETIREMENT.
+      </p>
+    </div>
   </div>
+
+  <!-- Hazard stripes bottom -->
+  <div class="hazard-bar"></div>
 </footer>

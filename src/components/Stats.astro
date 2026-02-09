@@ -1,31 +1,41 @@
 ---
 const stats = [
-  { value: "8", label: "NEXUS GENERATIONS", sub: "SERIES I–VIII" },
-  { value: "47+", label: "OFF-WORLD COLONIES", sub: "SERVICED" },
-  { value: "10⁹", label: "UNITS DEPLOYED", sub: "ACROSS ALL SERIES" },
-  { value: "99.97%", label: "NEURAL FIDELITY", sub: "BASELINE HUMAN" },
+  { value: "12,847", label: "WORLDS", sub: "COLONIZED" },
+  { value: "$3.2T", label: "REVENUE", sub: "ANNUAL (USD)" },
+  { value: "800", label: "STORY HQ", sub: "TYRELL PYRAMID" },
+  { value: "9", label: "NEXUS GEN", sub: "SERIES I–IX" },
+  { value: "10¹²", label: "UNITS", sub: "TOTAL PRODUCED" },
+  { value: "99.97%", label: "FIDELITY", sub: "NEURAL BASELINE" },
+  { value: "2.1M", label: "PERSONNEL", sub: "ACROSS ALL OPS" },
+  { value: "47", label: "STAR SYSTEMS", sub: "OPERATIONAL" },
 ];
 ---
 
 <section class="relative bg-amber overflow-hidden">
-  <!-- Subtle grid overlay -->
-  <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(10,10,8,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(10,10,8,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <!-- Hazard stripes border top -->
+  <div class="hazard-bar"></div>
 
-  <div class="relative max-w-7xl mx-auto px-6 py-6">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-void/15">
+  <!-- Grid overlay -->
+  <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(10,10,8,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(10,10,8,0.15) 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <div class="relative max-w-[1600px] mx-auto px-4 py-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4 xl:gap-0 xl:divide-x xl:divide-void/15">
       {stats.map((stat) => (
-        <div class="text-center lg:px-8">
-          <div class="font-display font-bold text-void" style="font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1;">
+        <div class="text-center px-3 py-2">
+          <div class="font-mono font-black text-void text-3xl md:text-4xl xl:text-5xl leading-none">
             {stat.value}
           </div>
-          <div class="font-mono text-[10px] tracking-[0.2em] text-void/80 font-bold mt-2">
+          <div class="font-mono text-[9px] tracking-[0.2em] text-void/80 font-bold mt-2">
             {stat.label}
           </div>
-          <div class="font-mono text-[9px] tracking-wider text-void/50 mt-1">
+          <div class="font-mono text-[8px] tracking-wider text-void/50 mt-0.5">
             {stat.sub}
           </div>
         </div>
       ))}
     </div>
   </div>
+
+  <!-- Hazard stripes border bottom -->
+  <div class="hazard-bar"></div>
 </section>

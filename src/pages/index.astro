@@ -14,19 +14,16 @@ import Footer from '../components/Footer.astro';
 
 <Layout>
   <Header />
-  <main class="pt-16">
+  <main>
     <Hero />
     <Stats />
-    <div class="grid-line"></div>
     <Mission />
-    <div class="grid-line"></div>
     <NexusSeries />
-    <div class="grid-line"></div>
+    <div class="hazard-bar"></div>
     <Divisions />
     <Philosophy />
-    <div class="grid-line"></div>
+    <div class="hazard-bar"></div>
     <Timeline />
-    <div class="grid-line"></div>
     <VoightKampff />
   </main>
   <Footer />
@@ -42,7 +39,7 @@ import Footer from '../components/Footer.astro';
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.05 }
   );
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));

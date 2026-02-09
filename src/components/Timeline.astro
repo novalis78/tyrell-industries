@@ -1,30 +1,41 @@
 ---
 const events = [
-  { year: "2019", title: "INCORPORATION", description: "Tyrell Industries founded in Los Angeles. First synthetic biology patents filed." },
-  { year: "2020", title: "NEXUS-1 PROTOTYPE", description: "First generation cognitive architecture achieves baseline consciousness metrics." },
-  { year: "2021", title: "GENESIS DIVISION", description: "Molecular design program launched. Synthetic tissue production begins." },
-  { year: "2022", title: "OFF-WORLD EXPANSION", description: "First corporate contracts for Off-World Colony labor solutions." },
-  { year: "2023", title: "NEXUS-6 SERIES", description: "Sixth generation replicants enter production. Indistinguishable from human baseline." },
-  { year: "2024", title: "PROMETHEUS INITIATIVE", description: "Memory implantation program achieves full autobiographical integration." },
-  { year: "2025", title: "GLOBAL OPERATIONS", description: "Operations expand to 47 territories. Revenue exceeds projections by 340%." },
-  { year: "2026", title: "NEXUS-7 ANNOUNCEMENT", description: "Next generation cognitive architecture. Details classified." }
+  { year: "2019", title: "INCORPORATION", desc: "TYRELL CORPORATION FOUNDED IN LOS ANGELES, SECTOR SOL-3. FIRST SYNTHETIC BIOLOGY PATENTS FILED.", data: "INITIAL CAPITAL: $2.4B // EMPLOYEES: 847" },
+  { year: "2020", title: "NEXUS-1 PROTOTYPE", desc: "FIRST GENERATION COGNITIVE ARCHITECTURE ACHIEVES BASELINE CONSCIOUSNESS METRICS. MILITARY INTEREST SECURED.", data: "CONSCIOUSNESS INDEX: 0.42 // CONTRACTS: 12" },
+  { year: "2021", title: "GENESIS DIVISION ESTABLISHED", desc: "MOLECULAR DESIGN PROGRAM LAUNCHED. SYNTHETIC TISSUE PRODUCTION BEGINS AT ORBITAL STATION GEN-1.", data: "TISSUE YIELD: 847KG/DAY // STAFF: 12,000" },
+  { year: "2022", title: "NEXUS-4 MILITARY DEPLOYMENT", desc: "FIRST MILITARY-GRADE NEXUS UNITS DEPLOYED TO OFF-WORLD COLONIES. COLONIAL DEFENSE CONTRACTS SECURED.", data: "UNITS DEPLOYED: 4.2M // CONTRACT VALUE: $89B" },
+  { year: "2023", title: "NEXUS-6 ENTERS PRODUCTION", desc: "SIXTH GENERATION REPLICANTS ACHIEVE FULL HUMAN BASELINE. INDISTINGUISHABLE FROM ORGANIC HUMANS.", data: "UNITS PRODUCED: 8.2M // NEURAL FIDELITY: 99.97% // NOTABLE: ROY BATTY" },
+  { year: "2024", title: "PROMETHEUS INITIATIVE", desc: "MEMORY IMPLANTATION PROGRAM ACHIEVES FULL AUTOBIOGRAPHICAL INTEGRATION. DETAILS CLASSIFIED UNDER TC-7749.", data: "CLEARANCE: LEVEL 5 // DESIGNER COUNT: [REDACTED]" },
+  { year: "2025", title: "NEXUS-7 EXPERIMENTAL", desc: "SINGLE PROTOTYPE PRODUCED WITH NATURAL LIFESPAN AND REPRODUCTIVE CAPABILITY. ALL RECORDS SEALED.", data: "UNITS: 1 // DESIGNATION: RACHAEL // STATUS: [CLASSIFIED]" },
+  { year: "2026", title: "THE BLACKOUT", desc: "ELECTROMAGNETIC PULSE EVENT DESTROYS DIGITAL RECORDS. NEXUS-8 PRODUCTION SUSPENDED INDEFINITELY.", data: "DATA LOSS: 97.3% // NEXUS-8 UNITS AT LARGE: ~12.4M" },
+  { year: "2027", title: "INTERSTELLAR EXPANSION", desc: "OPERATIONS EXPAND BEYOND SOL SYSTEM. ALPHA CENTAURI AND SIGMA DRACONIS COLONIES ESTABLISHED.", data: "STAR SYSTEMS: 12 // COLONIES: 1,847 // PERSONNEL: 890K" },
+  { year: "2030", title: "TANNHAUSER GATE OPERATIONAL", desc: "MILITARY STATION TANNHAUSER GATE ACHIEVES FULL OPERATIONAL STATUS. DEFENSE DIVISION HEADQUARTERS RELOCATED.", data: "STATIONS: 47 // CLEARANCE: RESTRICTED // PERSONNEL: [CLASSIFIED]" },
+  { year: "2035", title: "NEXUS-9 MASS PRODUCTION", desc: "NINTH GENERATION WITH IMPLANTED OBEDIENCE PROTOCOLS ENTERS MASS PRODUCTION ACROSS ALL 47 STAR SYSTEMS.", data: "UNITS: 847M+ // COMPLIANCE: 100% // DEPLOYMENT: ALL SECTORS" },
+  { year: "2040", title: "CURRENT OPERATIONS", desc: "TYRELL CORPORATION MAINTAINS OPERATIONAL SUPREMACY ACROSS 12,847 WORLDS. ANNUAL REVENUE: $3.2T.", data: "WORLDS: 12,847 // STAR SYSTEMS: 47 // PERSONNEL: 2.1M" },
 ];
 ---
 
-<section id="timeline" class="py-32 bg-obsidian">
-  <div class="max-w-3xl mx-auto px-6">
+<section id="timeline" class="py-16 bg-obsidian">
+  <div class="max-w-7xl mx-auto px-4">
     <!-- Header -->
-    <div class="reveal mb-16">
-      <p class="font-mono text-xs tracking-[0.3em] text-amber mb-4">CORPORATE HISTORY</p>
-      <h2 class="font-display text-4xl sm:text-5xl font-light text-ivory">Timeline</h2>
+    <div class="reveal mb-4">
+      <span class="inline-block bg-amber text-void font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
+        CORPORATE HISTORY
+      </span>
+    </div>
+    <div class="reveal mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="text-ivory">TIMELINE</h2>
+      <p class="font-mono text-xs text-stone/60 tracking-wider">
+        12 KEY EVENTS // 2019–2040 // OPERATIONAL RECORD
+      </p>
     </div>
 
     <!-- Vertical timeline -->
     <div class="relative">
       {events.map((event, i) => (
-        <div class={`reveal reveal-delay-${(i % 3) + 1} relative pl-16 pb-12 border-l-2 border-amber/30 last:pb-0`}>
-          <!-- Amber dot on the line -->
-          <div class="absolute -left-[9px] top-0 w-4 h-4 bg-amber rounded-full"></div>
+        <div class={`reveal reveal-delay-${(i % 3) + 1} relative pl-16 pb-10 border-l-2 border-amber/40 last:pb-0`}>
+          <!-- Amber dot on the line — 12px -->
+          <div class="absolute -left-[7px] top-0 w-3.5 h-3.5 bg-amber rounded-full"></div>
 
           <!-- Date badge -->
           <span class="inline-block bg-amber text-void font-mono font-bold text-xs tracking-widest px-3 py-1 clip-corner">
@@ -32,10 +43,13 @@ const events = [
           </span>
 
           <!-- Title -->
-          <h3 class="text-xl font-bold text-ivory uppercase mt-4">{event.title}</h3>
+          <h3 class="text-xl text-ivory mt-3" style="font-size: 1.25rem;">{event.title}</h3>
 
           <!-- Description -->
-          <p class="text-stone font-mono text-sm mt-2 leading-relaxed">{event.description}</p>
+          <p class="text-stone font-mono text-[11px] mt-2 leading-relaxed">{event.desc}</p>
+
+          <!-- Operational data line -->
+          <p class="font-mono text-[10px] text-amber/60 mt-2">{event.data}</p>
         </div>
       ))}
     </div>
