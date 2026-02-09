@@ -5,43 +5,44 @@
   <div class="max-w-7xl mx-auto px-6">
     <!-- 4-column grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      <!-- Column 1: Company -->
+      <!-- Column 1: Brand -->
       <div>
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-8 clip-corner border border-amber/40 flex items-center justify-center">
-            <svg viewBox="0 0 24 24" class="w-4 h-4">
-              <polygon points="12,2 22,20 2,20" fill="none" stroke="#D4A84B" stroke-width="1.5" />
-              <circle cx="12" cy="10" r="1.5" fill="#D4A84B" opacity="0.6" />
-            </svg>
-          </div>
-          <span class="font-mono text-xs tracking-[0.2em] text-ivory">TYRELL INDUSTRIES</span>
+          <svg viewBox="0 0 32 32" class="w-7 h-7" fill="none">
+            <polygon points="16,2 30,28 2,28" stroke="#D4A84B" stroke-width="1" fill="none" opacity="0.8" />
+            <polygon points="16,10 24,28 8,28" stroke="#D4A84B" stroke-width="0.5" fill="none" opacity="0.4" />
+            <circle cx="16" cy="12" r="1.5" fill="#F4C563" opacity="0.6" />
+          </svg>
+          <span class="font-display text-lg text-ivory tracking-wider">TYRELL</span>
         </div>
-        <p class="font-mono text-xs text-stone leading-relaxed">
+        <p class="font-mono text-xs text-stone/60 leading-relaxed">
           Pioneering synthetic biological systems and cognitive architectures. More human than human.
         </p>
+        <div class="mt-4 flex items-center gap-2">
+          <span class="w-2 h-2 bg-amber rounded-full" style="animation: amber-pulse 2s ease-in-out infinite; box-shadow: 0 0 8px rgba(212, 168, 75, 0.6);"></span>
+          <span class="font-mono text-[10px] text-amber tracking-widest">SYSTEMS ONLINE</span>
+        </div>
       </div>
 
       <!-- Column 2: Divisions -->
       <div>
         <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">DIVISIONS</h4>
         <ul class="space-y-3">
-          <li><a href="#nexus" class="font-mono text-xs text-stone hover:text-amber transition-colors">Nexus Program</a></li>
-          <li><a href="#divisions" class="font-mono text-xs text-stone hover:text-amber transition-colors">Genesis Division</a></li>
-          <li><a href="#divisions" class="font-mono text-xs text-stone hover:text-amber transition-colors">Prometheus Initiative</a></li>
-          <li><a href="#nexus" class="font-mono text-xs text-stone hover:text-amber transition-colors">Animoid Row</a></li>
-          <li><a href="#divisions" class="font-mono text-xs text-stone hover:text-amber transition-colors">Off-World Operations</a></li>
+          <li><a href="#nexus" class="font-mono text-sm text-stone hover:text-amber transition-colors">Nexus Series</a></li>
+          <li><a href="#divisions" class="font-mono text-sm text-stone hover:text-amber transition-colors">Genesis Program</a></li>
+          <li><a href="#divisions" class="font-mono text-sm text-stone hover:text-amber transition-colors">Prometheus Initiative</a></li>
+          <li><a href="#divisions" class="font-mono text-sm text-stone hover:text-amber transition-colors">Off-World Operations</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: Corporate -->
+      <!-- Column 3: Company -->
       <div>
-        <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">CORPORATE</h4>
+        <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">COMPANY</h4>
         <ul class="space-y-3">
-          <li><a href="#mission" class="font-mono text-xs text-stone hover:text-amber transition-colors">Mission</a></li>
-          <li><a href="#timeline" class="font-mono text-xs text-stone hover:text-amber transition-colors">Corporate History</a></li>
-          <li><a href="#vk" class="font-mono text-xs text-stone hover:text-amber transition-colors">VK Compliance</a></li>
-          <li><span class="font-mono text-xs text-stone/40">Careers [RESTRICTED]</span></li>
-          <li><span class="font-mono text-xs text-stone/40">Investor Relations [RESTRICTED]</span></li>
+          <li><a href="#mission" class="font-mono text-sm text-stone hover:text-amber transition-colors">Mission</a></li>
+          <li><a href="#timeline" class="font-mono text-sm text-stone hover:text-amber transition-colors">Corporate History</a></li>
+          <li><a href="#vk" class="font-mono text-sm text-stone hover:text-amber transition-colors">VK Compliance</a></li>
+          <li><span class="font-mono text-sm text-stone/40">Careers [RESTRICTED]</span></li>
         </ul>
       </div>
 
@@ -49,35 +50,32 @@
       <div>
         <h4 class="font-mono text-xs tracking-[0.2em] text-amber mb-6">HEADQUARTERS</h4>
         <div class="space-y-3">
-          <p class="font-mono text-xs text-stone">Tyrell Pyramid</p>
-          <p class="font-mono text-xs text-stone">Sector 4, Los Angeles</p>
-          <p class="font-mono text-xs text-stone">Earth // Sol System</p>
+          <p class="font-mono text-sm text-stone">Tyrell Pyramid</p>
+          <p class="font-mono text-xs text-stone/60">Sector 4, Los Angeles</p>
+          <p class="font-mono text-xs text-stone/60">Earth // Sol System</p>
           <div class="divider-amber my-4"></div>
-          <p class="font-mono text-xs text-stone">Off-World Division</p>
-          <p class="font-mono text-xs text-stone">Tannhäuser Gate Station</p>
-          <p class="font-mono text-xs text-stone">Shoulder of Orion</p>
+          <p class="font-mono text-xs text-stone/40">Off-World Division</p>
+          <p class="font-mono text-xs text-stone/40">Coordinates: [CLASSIFIED]</p>
         </div>
       </div>
     </div>
 
-    <!-- Bottom terminal bar -->
-    <div class="terminal p-4">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] tracking-widest text-amber/60">
-        <div class="flex items-center gap-4">
-          <span>&copy; 2026 TYRELL INDUSTRIES</span>
-          <span class="hidden sm:inline text-amber/30">|</span>
-          <span class="hidden sm:inline">LOS ANGELES // OFF-WORLD COLONIES</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber" style="animation: amber-pulse 2s ease-in-out infinite; box-shadow: 0 0 6px rgba(212, 168, 75, 0.6);"></span>
-          <span>SYSTEM STATUS: OPERATIONAL</span>
-        </div>
-      </div>
-    </div>
+    <!-- Divider -->
+    <div class="divider-amber mb-6"></div>
 
-    <!-- Legal -->
-    <div class="mt-8 text-center">
-      <p class="font-mono text-[10px] text-stone/30 tracking-wider">REPLICANTS ARE NOT PERMITTED ON EARTH WITHOUT VALID DOCUMENTATION // VOIGHT-KAMPFF TESTING: MANDATORY // TYR-REG-2019</p>
+    <!-- Terminal status bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <p class="font-mono text-[10px] text-stone/50 tracking-wider">&copy; 2026 TYRELL INDUSTRIES</p>
+        <p class="font-mono text-[10px] text-stone/30 tracking-wider hidden sm:block">LOS ANGELES // OFF-WORLD COLONIES</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <p class="font-mono text-[10px] text-stone/30 tracking-wider">REPLICANTS ARE NOT PERMITTED ON EARTH</p>
+        <p class="font-mono text-[10px] text-amber/40 tracking-wider">
+          <span class="inline-block w-1.5 h-1.5 bg-amber/60 rounded-full mr-1.5" style="animation: amber-pulse 2s ease-in-out infinite;"></span>
+          VK TESTING: MANDATORY
+        </p>
+      </div>
     </div>
   </div>
 </footer>
