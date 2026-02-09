@@ -1,0 +1,42 @@
+---
+const events = [
+  { year: "2012", title: "Dr. Eldon Tyrell founds the Tyrell Corporation", description: "Initial research into synthetic biological systems begins in a private laboratory in Los Angeles. Tyrell assembles a team of the world's foremost genetic engineers." },
+  { year: "2014", title: "Nexus-1 Announced", description: "First generation replicant prototype demonstrated. Rudimentary cognitive function. Limited motor capability. Proof of concept for engineered organic consciousness." },
+  { year: "2015", title: "Nexus-2 & Nexus-3 Development", description: "Rapid iteration on cognitive architectures. Nexus-3 achieves baseline motor function and simple language processing. Military contracts secured for Off-World deployment." },
+  { year: "2016", title: "Nexus-4 Deployed", description: "First generation deemed fit for Off-World colonial labor. Physical capabilities exceed human baseline. Limited emotional response. Deployed to hazardous environment outposts." },
+  { year: "2017", title: "Tyrell Pyramid Headquarters Completed", description: "The twin pyramid structures — visible from anywhere in greater Los Angeles — completed on the city outskirts. Inclinators run along the exterior facades. Dr. Tyrell establishes his private sanctum at the apex." },
+  { year: "2018", title: "Nexus-5 & Nexus-6 Enter Production", description: "Nexus-6: the masterwork. Superior strength and agility, intelligence equal to their creators. Built-in 4-year lifespan as safety mechanism against emotional deviation. Rachael designated as experimental Nexus-7 prototype with implanted memories." },
+  { year: "2019", title: "The Incident", description: "A Nexus-6 combat team led by Roy Batty mutinies Off-World and returns to Earth seeking their creator. Blade Runner unit deployed. Dr. Eldon Tyrell is killed in his sanctum. Corporate leadership transfers to his niece." },
+  { year: "2020", title: "Nexus-8 Program", description: "Under new leadership, the Nexus-8 line is developed with open-ended lifespans equal to natural humans. This decision proves controversial and triggers widespread anti-replicant sentiment." },
+  { year: "2022", title: "The Blackout", description: "Replicant freedom activists destroy the Tyrell Corporation database. A massive EMP blackout engulfs Los Angeles. All digital records lost. Replicant prohibition enacted worldwide." },
+  { year: "2023", title: "Corporate Decline", description: "Without production capability or records, the Tyrell Corporation enters bankruptcy proceedings. The twin pyramids stand empty — monuments to ambition." },
+  { year: "2028", title: "Wallace Acquisition", description: "The remains of the Tyrell Corporation are acquired by Niander Wallace and the Wallace Corporation. Replicant production resumes under new ownership. The pyramids are rebuilt. Eldon Tyrell's private sanctum is preserved — a monument to his hubris, or his genius." }
+];
+---
+
+<section class="relative py-32 sm:py-40 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="reveal text-center mb-20">
+      <p class="font-mono text-xs tracking-[0.4em] text-stone/50 mb-4">CORPORATE RECORD</p>
+      <h2 class="font-display text-4xl sm:text-5xl font-light text-ivory">History</h2>
+    </div>
+
+    <div class="space-y-0">
+      {events.map((event, i) => (
+        <div class={`reveal reveal-delay-${(i % 3) + 1} flex gap-6 sm:gap-8 relative`}>
+          <!-- Timeline line -->
+          <div class="flex flex-col items-center flex-shrink-0 w-16 sm:w-20">
+            <span class="font-mono text-sm text-amber tracking-wider">{event.year}</span>
+            <div class="w-[1px] flex-1 bg-gradient-to-b from-amber/30 to-stone/10 mt-2"></div>
+          </div>
+          <div class="pb-10">
+            <h3 class="font-display text-lg sm:text-xl text-ivory mb-2 leading-snug">{event.title}</h3>
+            <p class="text-stone text-sm leading-relaxed">{event.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 grid-line"></div>
+</section>
