@@ -1,0 +1,31 @@
+---
+const stats = [
+  { value: "8", label: "NEXUS GENERATIONS", sub: "SERIES I–VIII" },
+  { value: "47+", label: "OFF-WORLD COLONIES", sub: "SERVICED" },
+  { value: "10⁹", label: "UNITS DEPLOYED", sub: "ACROSS ALL SERIES" },
+  { value: "99.97%", label: "NEURAL FIDELITY", sub: "BASELINE HUMAN" },
+];
+---
+
+<section class="relative bg-amber overflow-hidden">
+  <!-- Subtle grid overlay -->
+  <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(10,10,8,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(10,10,8,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 py-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-void/15">
+      {stats.map((stat) => (
+        <div class="text-center lg:px-8">
+          <div class="font-display font-bold text-void" style="font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1;">
+            {stat.value}
+          </div>
+          <div class="font-mono text-[10px] tracking-[0.2em] text-void/80 font-bold mt-2">
+            {stat.label}
+          </div>
+          <div class="font-mono text-[9px] tracking-wider text-void/50 mt-1">
+            {stat.sub}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

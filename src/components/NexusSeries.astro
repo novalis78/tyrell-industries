@@ -1,0 +1,132 @@
+---
+const models = [
+  {
+    model: "NEXUS-6",
+    codename: "COMBAT / LABOR / PLEASURE",
+    status: "DISCONTINUED",
+    statusType: "warning",
+    gen: "6th Generation",
+    lifespan: "4-YEAR FAILSAFE",
+    desc: "Superior strength and agility. Equal or superior intelligence to genetic engineers who created them. Limited emotional development. Notable units: Roy Batty, Pris, Zhora, Leon Kowalski.",
+    specs: ["Superhuman strength", "A-level mental acuity", "4-year fixed lifespan", "Emotional volatility observed"]
+  },
+  {
+    model: "NEXUS-7",
+    codename: "RACHAEL PROTOTYPE",
+    status: "EXPERIMENTAL",
+    statusType: "classified",
+    gen: "7th Generation",
+    lifespan: "NATURAL LIFESPAN",
+    desc: "First model implanted with false memories to provide emotional cushion. Single prototype produced. Capable of biological reproduction — a first for synthetic organisms. All records sealed by corporate order.",
+    specs: ["Memory implantation", "Emotional stability", "Reproductive capability", "Records: [SEALED]"]
+  },
+  {
+    model: "NEXUS-8",
+    codename: "OPEN-ENDED",
+    status: "ACTIVE",
+    statusType: "active",
+    gen: "8th Generation",
+    lifespan: "NATURAL LIFESPAN",
+    desc: "Removed 4-year failsafe. Natural lifespan. Identifiable by serial number in right eye. Notable units: Sapper Morton, Freysa. Production halted following The Blackout of 2022.",
+    specs: ["Natural lifespan", "Ocular serial ID", "Enhanced empathy", "Production: SUSPENDED"]
+  },
+  {
+    model: "NEXUS-9",
+    codename: "WALLACE SERIES",
+    status: "IN PRODUCTION",
+    statusType: "active",
+    gen: "9th Generation",
+    lifespan: "PROGRAMMED OBEDIENCE",
+    desc: "Produced under Wallace Corporation following acquisition. Built with implanted obedience protocols. Incapable of disobeying human orders. Notable unit: Officer KD6-3.7.",
+    specs: ["Obedience baseline", "Memory implants standard", "Wallace proprietary", "Full compliance"]
+  },
+  {
+    model: "NEXUS-4",
+    codename: "MILITARY SERIES",
+    status: "LEGACY",
+    statusType: "legacy",
+    gen: "4th Generation",
+    lifespan: "3-YEAR FAILSAFE",
+    desc: "Early military-grade model deployed in Off-World combat operations. Limited cognitive function compared to later series. High physical durability. Bulk production for colonial defense contracts.",
+    specs: ["Military-grade chassis", "Limited cognition", "3-year failsafe", "Off-World deployment"]
+  },
+  {
+    model: "MEM-IMPLANT",
+    codename: "PROMETHEUS SYSTEM",
+    status: "CLASSIFIED",
+    statusType: "classified",
+    gen: "Memory Division",
+    lifespan: "N/A",
+    desc: "Synthetic memory implantation technology. Full autobiographical memory sets created by specialized designers. Provides emotional grounding for Nexus-7+ models. Designer: [REDACTED].",
+    specs: ["Full autobiography gen", "Emotional cushion", "Designer: [REDACTED]", "Clearance: LEVEL 5"]
+  }
+];
+---
+
+<section id="nexus" class="py-32 bg-void">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="reveal mb-4">
+      <span class="inline-block bg-amber text-void font-mono font-bold text-[10px] tracking-[0.2em] px-3 py-1 clip-corner">
+        PRODUCT CATALOGUE
+      </span>
+    </div>
+    <div class="reveal mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <h2 class="font-display font-light text-ivory" style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 0.9;">
+          Nexus Series
+        </h2>
+        <p class="font-mono text-xs text-stone tracking-widest mt-4">SYNTHETIC HUMAN PRODUCT LINE // GENERATIONS 4–9</p>
+      </div>
+      <p class="font-mono text-xs text-stone/60 tracking-wider">
+        <span class="status-active text-amber">SERIES ACTIVE</span>
+      </p>
+    </div>
+
+    <!-- Product grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {models.map((m, i) => (
+        <div class={`reveal reveal-delay-${(i % 3) + 1} corp-card p-0 flex flex-col`}>
+          <!-- Card header -->
+          <div class="p-6 pb-4 border-b border-amber/10">
+            <div class="flex items-start justify-between mb-3">
+              <span class="font-mono text-amber font-bold text-lg tracking-wider">{m.model}</span>
+              <span class={`font-mono text-[10px] tracking-widest ${
+                m.statusType === 'classified' ? 'status-classified text-red-400' :
+                m.statusType === 'warning' ? 'text-amber/60' :
+                m.statusType === 'legacy' ? 'text-stone/60' :
+                'status-active text-amber'
+              }`}>
+                {m.status}
+              </span>
+            </div>
+            <p class="font-mono text-[10px] tracking-[0.15em] text-stone">{m.codename}</p>
+          </div>
+
+          <!-- Card body -->
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="font-mono text-[10px] text-amber/60">{m.gen}</span>
+              <span class="font-mono text-[10px] text-stone/50">|</span>
+              <span class="font-mono text-[10px] text-stone/60">{m.lifespan}</span>
+            </div>
+
+            <p class="text-stone font-mono text-xs leading-relaxed flex-1">{m.desc}</p>
+
+            <!-- Specs -->
+            <div class="mt-5 pt-4 border-t border-amber/5">
+              <ul class="space-y-1.5">
+                {m.specs.map((spec) => (
+                  <li class="font-mono text-[10px] text-stone/70 flex items-center gap-2">
+                    <span class="w-1 h-1 bg-amber/40 rounded-full flex-shrink-0"></span>
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

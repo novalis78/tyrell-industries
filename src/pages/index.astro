@@ -1,21 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
 import Mission from '../components/Mission.astro';
+import NexusSeries from '../components/NexusSeries.astro';
 import Divisions from '../components/Divisions.astro';
 import Philosophy from '../components/Philosophy.astro';
 import Timeline from '../components/Timeline.astro';
+import VoightKampff from '../components/VoightKampff.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-  <main>
+  <Header />
+  <main class="pt-16">
     <Hero />
+    <Stats />
     <div class="grid-line"></div>
     <Mission />
+    <div class="grid-line"></div>
+    <NexusSeries />
+    <div class="grid-line"></div>
     <Divisions />
     <Philosophy />
+    <div class="grid-line"></div>
     <Timeline />
+    <div class="grid-line"></div>
+    <VoightKampff />
   </main>
   <Footer />
 </Layout>
